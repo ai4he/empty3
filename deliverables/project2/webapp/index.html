@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyBuddy - AI-Powered Adaptive Study Companion</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#2563EB;--secondary:#059669;--bg:#F1F5F9;--card:#FFFFFF;--text:#1E293B;--text2:#64748B;--border:#E2E8F0;--sidebar:#1E293B;--sidebar-text:#CBD5E1;--danger:#DC2626;--warning:#F59E0B;--shadow:0 1px 3px rgba(0,0,0,0.1)}
+[data-theme="dark"]{--bg:#0F172A;--card:#1E293B;--text:#E2E8F0;--text2:#94A3B8;--border:#334155;--shadow:0 1px 3px rgba(0,0,0,0.3)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;transition:background .3s,color .3s}
+.sidebar{width:220px;background:var(--sidebar);color:var(--sidebar-text);padding:20px 0;position:fixed;height:100vh;overflow-y:auto;z-index:10}
+.sidebar h2{padding:0 20px 20px;color:#fff;font-size:1.3rem;border-bottom:1px solid #334155}
+.sidebar h2 span{color:var(--secondary)}
+.nav-item{padding:12px 20px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s;font-size:.95rem}
+.nav-item:hover,.nav-item.active{background:#334155;color:#fff}
+.nav-item.active{border-left:3px solid var(--primary)}
+.main{margin-left:220px;padding:24px;flex:1;min-height:100vh}
+.page{display:none}.page.active{display:block}
+.page-title{font-size:1.5rem;font-weight:700;margin-bottom:20px}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:16px;transition:background .3s}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat-card{text-align:center;padding:16px}
+.stat-card .value{font-size:1.8rem;font-weight:700;color:var(--primary)}
+.stat-card .label{font-size:.85rem;color:var(--text2);margin-top:4px}
+.circle-progress{position:relative;width:150px;height:150px;margin:0 auto}
+.circle-progress svg{transform:rotate(-90deg)}
+.circle-progress .score-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.circle-progress .score-text .num{font-size:2rem;font-weight:700;color:var(--primary)}
+.circle-progress .score-text .of{font-size:.8rem;color:var(--text2)}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:10px}
+.bar-chart .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bar-chart .bar{width:100%;border-radius:4px 4px 0 0;transition:height .5s;min-width:20px}
+.bar-chart .bar-label{font-size:.7rem;color:var(--text2)}
+.bar-chart .bar-val{font-size:.7rem;font-weight:600}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text)}
+.form-group input,.form-group select{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;background:var(--card);color:var(--text);transition:border .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary)}
+.btn{padding:10px 24px;border:none;border-radius:8px;cursor:pointer;font-size:.9rem;font-weight:600;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-secondary{background:var(--secondary);color:#fff}
+.result-box{margin-top:16px;padding:16px;border-radius:10px;background:var(--bg);border:1px solid var(--border);display:none}
+.result-box.show{display:block}
+.rec-card{border-left:4px solid;padding:16px;display:flex;align-items:flex-start;gap:12px}
+.rec-card.red{border-color:var(--danger)}.rec-card.yellow{border-color:var(--warning)}.rec-card.green{border-color:var(--secondary)}
+.rec-card .priority{font-size:.7rem;padding:2px 8px;border-radius:10px;color:#fff;font-weight:600}
+.rec-card.red .priority{background:var(--danger)}.rec-card.yellow .priority{background:var(--warning)}.rec-card.green .priority{background:var(--secondary)}
+.rec-card input[type="checkbox"]{width:18px;height:18px;margin-top:2px;cursor:pointer;accent-color:var(--secondary)}
+.rec-card.done{opacity:.5;text-decoration:line-through}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);font-size:.9rem}
+th{font-weight:600;color:var(--text2);font-size:.8rem;text-transform:uppercase}
+.diff-pos{color:var(--secondary);font-weight:600}.diff-neg{color:var(--danger);font-weight:600}
+.toggle{position:relative;width:48px;height:26px;display:inline-block}
+.toggle input{opacity:0;width:0;height:0}
+.toggle .slider{position:absolute;inset:0;background:var(--border);border-radius:26px;cursor:pointer;transition:.3s}
+.toggle .slider:before{content:'';position:absolute;width:20px;height:20px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s}
+.toggle input:checked+.slider{background:var(--primary)}
+.toggle input:checked+.slider:before{transform:translateX(22px)}
+.export-btn{position:fixed;bottom:20px;right:20px;z-index:100;padding:10px 18px;background:var(--primary);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:600;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.export-btn:hover{opacity:.9}
+.welcome{font-size:1.1rem;color:var(--text2);margin-bottom:20px}
+@media(max-width:768px){
+  .sidebar{width:60px}.sidebar h2,.nav-item span{display:none}.nav-item{justify-content:center;padding:14px 0}
+  .main{margin-left:60px;padding:14px}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <h2>Study<span>Buddy</span></h2>
+  <div class="nav-item active" data-page="dashboard" onclick="navigateTo('dashboard')"><span>Dashboard</span></div>
+  <div class="nav-item" data-page="predictions" onclick="navigateTo('predictions')"><span>Predictions</span></div>
+  <div class="nav-item" data-page="recommendations" onclick="navigateTo('recommendations')"><span>Recommendations</span></div>
+  <div class="nav-item" data-page="history" onclick="navigateTo('history')"><span>History</span></div>
+  <div class="nav-item" data-page="settings" onclick="navigateTo('settings')"><span>Settings</span></div>
+</nav>
+<main class="main">
+  <!-- Dashboard -->
+  <div id="dashboard" class="page active">
+    <h1 class="page-title">Dashboard</h1>
+    <p class="welcome">Welcome back, <span id="dash-name">Student</span>! Here's your study overview.</p>
+    <div class="grid-2">
+      <div class="card" style="text-align:center">
+        <h3 style="margin-bottom:12px;color:var(--text2)">Predicted Score</h3>
+        <div class="circle-progress">
+          <svg width="150" height="150"><circle cx="75" cy="75" r="65" fill="none" stroke="var(--border)" stroke-width="10"/><circle id="prog-circle" cx="75" cy="75" r="65" fill="none" stroke="var(--primary)" stroke-width="10" stroke-dasharray="408.4" stroke-dashoffset="89.85" stroke-linecap="round"/></svg>
+          <div class="score-text"><div class="num">78</div><div class="of">out of 100</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="grid-2" style="height:100%">
+          <div class="card stat-card"><div class="value">12h</div><div class="label">Study Hours</div></div>
+          <div class="card stat-card"><div class="value">8/10</div><div class="label">Assignments</div></div>
+          <div class="card stat-card"><div class="value" style="color:var(--secondary)">92%</div><div class="label">Attendance</div></div>
+          <div class="card stat-card"><div class="value" style="color:var(--warning)">B+</div><div class="label">Current Grade</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:12px">Last 5 Assessment Scores</h3>
+      <div class="bar-chart" id="dash-chart"></div>
+    </div>
+  </div>
+
+  <!-- Predictions -->
+  <div id="predictions" class="page">
+    <h1 class="page-title">Score Prediction</h1>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="margin-bottom:16px">Enter Your Study Profile</h3>
+        <form id="predict-form" onsubmit="handlePredict(event)">
+          <div class="grid-2">
+            <div class="form-group"><label>Study Hours / Week</label><input type="number" id="f_study_hours" value="12" min="0" max="80" step="0.5" required></div>
+            <div class="form-group"><label>Attendance Rate (%)</label><input type="number" id="f_attendance" value="92" min="0" max="100" required></div>
+            <div class="form-group"><label>Previous GPA</label><input type="number" id="f_gpa" value="3.2" min="0" max="4" step="0.01" required></div>
+            <div class="form-group"><label>Assignment Completion (%)</label><input type="number" id="f_assignments" value="80" min="0" max="100" required></div>
+            <div class="form-group"><label>Class Participation (1-10)</label><input type="number" id="f_participation" value="6" min="1" max="10" required></div>
+            <div class="form-group"><label>Avg Sleep Hours</label><input type="number" id="f_sleep" value="7" min="0" max="16" step="0.5" required></div>
+            <div class="form-group"><label>Extracurricular Hours</label><input type="number" id="f_extra" value="5" min="0" max="40" step="0.5" required></div>
+            <div class="form-group"><label>Stress Level (1-10)</label><input type="number" id="f_stress" value="5" min="1" max="10" required></div>
+            <div class="form-group"><label>Study Method</label><select id="f_method"><option value="mixed">Mixed Methods</option><option value="visual">Visual Learning</option><option value="reading">Reading/Writing</option><option value="practice">Practice Problems</option><option value="group">Group Study</option></select></div>
+            <div class="form-group"><label>Resource Usage (1-10)</label><input type="number" id="f_resource" value="6" min="1" max="10" required></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top:8px;width:100%">Predict My Score</button>
+        </form>
+      </div>
+      <div>
+        <div class="card result-box show" id="pred-result" style="display:none">
+          <h3 style="margin-bottom:12px">Prediction Result</h3>
+          <div style="text-align:center">
+            <div id="pred-score" style="font-size:3rem;font-weight:700;color:var(--primary)">--</div>
+            <div style="color:var(--text2);margin-bottom:8px">Predicted Score</div>
+            <div id="pred-ci" style="font-size:.9rem;color:var(--text2)"></div>
+            <div id="pred-source" style="font-size:.75rem;color:var(--text2);margin-top:6px"></div>
+          </div>
+          <div id="pred-recs" style="margin-top:16px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div id="recommendations" class="page">
+    <h1 class="page-title">Personalized Recommendations</h1>
+    <div id="rec-list"></div>
+  </div>
+
+  <!-- History -->
+  <div id="history" class="page">
+    <h1 class="page-title">Prediction History</h1>
+    <div class="card">
+      <table>
+        <thead><tr><th>Date</th><th>Predicted</th><th>Actual</th><th>Difference</th></tr></thead>
+        <tbody id="history-table"></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:12px">Score Comparison</h3>
+      <div class="bar-chart" id="history-chart" style="height:140px"></div>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <div id="settings" class="page">
+    <h1 class="page-title">Settings</h1>
+    <div class="card" style="max-width:500px">
+      <div class="form-group"><label>Your Name</label><input type="text" id="set-name" placeholder="Enter your name" oninput="handleSettingsChange('name',this.value)"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:18px 0">
+        <label style="font-weight:600">Dark Theme</label>
+        <label class="toggle"><input type="checkbox" id="set-theme" onchange="handleThemeToggle(this.checked)"><span class="slider"></span></label>
+      </div>
+      <h3 style="margin:18px 0 10px;font-size:.95rem">Notifications</h3>
+      <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer"><input type="checkbox" checked onchange="handleSettingsChange('notif_study_reminders',this.checked)"> Study Reminders</label>
+      <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer"><input type="checkbox" checked onchange="handleSettingsChange('notif_score_updates',this.checked)"> Score Updates</label>
+      <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer"><input type="checkbox" onchange="handleSettingsChange('notif_weekly_report',this.checked)"> Weekly Report</label>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" onchange="handleSettingsChange('notif_recommendation_alerts',this.checked)"> Recommendation Alerts</label>
+    </div>
+  </div>
+</main>
+<button class="export-btn" onclick="exportLogs()">Export Logs</button>
+
+<script>
+/* ====== TELEMETRY ====== */
+window.telemetryLog = [];
+let currentPage = 'dashboard', pageStartTime = Date.now();
+
+function logEvent(event_type, details = {}) {
+  const elapsed = Math.round((Date.now() - pageStartTime) / 1000);
+  window.telemetryLog.push({
+    timestamp: new Date().toISOString(),
+    event_type: event_type,
+    page: currentPage,
+    details: details,
+    time_on_page_seconds: elapsed
+  });
+}
+
+function exportLogs() {
+  logEvent('button_click', {action: 'export_logs'});
+  const pid = prompt('Enter your Participant ID:');
+  if (!pid) return;
+  const payload = {participant_id: pid, exported_at: new Date().toISOString(), total_events: window.telemetryLog.length, events: window.telemetryLog};
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `studybuddy_telemetry_${pid}_${Date.now()}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* ====== NAVIGATION ====== */
+function navigateTo(page) {
+  logEvent('page_view', {from: currentPage, to: page});
+  pageStartTime = Date.now();
+  currentPage = page;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.page === page));
+  logEvent('button_click', {action: 'navigate', target: page});
+}
+
+/* ====== DASHBOARD CHART ====== */
+const last5 = [{label:'Quiz 1',score:72},{label:'Midterm',score:81},{label:'Quiz 2',score:68},{label:'Project',score:88},{label:'Quiz 3',score:78}];
+function renderBarChart(container, data, maxVal, color) {
+  const el = document.getElementById(container);
+  el.innerHTML = '';
+  data.forEach(d => {
+    const h = (d.score / maxVal) * 100;
+    el.innerHTML += `<div class="bar-col"><div class="bar-val">${d.score}</div><div class="bar" style="height:${h}%;background:${color || 'var(--primary)'}"></div><div class="bar-label">${d.label}</div></div>`;
+  });
+}
+renderBarChart('dash-chart', last5, 100, 'var(--primary)');
+
+/* ====== PREDICTION ====== */
+function localPredict(f) {
+  const methodBonus = {mixed:0, visual:1, reading:0.5, practice:2, group:1.5};
+  let score = (f.study_hours_per_week * 1.2) + (f.attendance_rate * 0.25) + (f.previous_gpa * 10)
+    + (f.assignment_completion_rate * 0.15) + (f.class_participation * 1.0)
+    + (f.sleep_hours_avg * 0.8) - (f.extracurricular_hours * 0.3)
+    - (f.stress_level * 1.5) + (methodBonus[f.study_method] || 0) + (f.resource_usage * 0.5);
+  score = Math.max(0, Math.min(100, Math.round(score * 10) / 10));
+  const ci = Math.round(Math.max(3, 12 - f.resource_usage) * 10) / 10;
+  const recs = [];
+  if (f.study_hours_per_week < 10) recs.push('Increase weekly study hours to at least 10.');
+  if (f.sleep_hours_avg < 7) recs.push('Aim for 7-8 hours of sleep for better retention.');
+  if (f.stress_level > 6) recs.push('Consider stress-management techniques like meditation.');
+  if (f.attendance_rate < 85) recs.push('Improving attendance can significantly boost your score.');
+  if (recs.length === 0) recs.push('Great job! Keep maintaining your current habits.');
+  return {predicted_score: score, confidence_interval: {lower: Math.max(0, score - ci), upper: Math.min(100, score + ci)}, recommendations: recs};
+}
+
+async function handlePredict(e) {
+  e.preventDefault();
+  const features = {
+    study_hours_per_week: +document.getElementById('f_study_hours').value,
+    attendance_rate: +document.getElementById('f_attendance').value,
+    previous_gpa: +document.getElementById('f_gpa').value,
+    assignment_completion_rate: +document.getElementById('f_assignments').value,
+    class_participation: +document.getElementById('f_participation').value,
+    sleep_hours_avg: +document.getElementById('f_sleep').value,
+    extracurricular_hours: +document.getElementById('f_extra').value,
+    stress_level: +document.getElementById('f_stress').value,
+    study_method: document.getElementById('f_method').value,
+    resource_usage: +document.getElementById('f_resource').value
+  };
+  logEvent('form_submission', {form: 'prediction', features});
+  logEvent('prediction_request', {method: 'pending', features});
+  let result, source = 'Local Calculation';
+  try {
+    const res = await fetch('http://localhost:5001/predict', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(features)
+    });
+    if (res.ok) { result = await res.json(); source = 'AutoGluon API'; }
+    else throw new Error('API error');
+  } catch (_) {
+    result = localPredict(features);
+  }
+  logEvent('prediction_request', {method: source, result});
+  const box = document.getElementById('pred-result');
+  box.style.display = 'block';
+  document.getElementById('pred-score').textContent = result.predicted_score;
+  document.getElementById('pred-ci').textContent = `95% CI: [${result.confidence_interval.lower.toFixed(1)}, ${result.confidence_interval.upper.toFixed(1)}]`;
+  document.getElementById('pred-source').textContent = `Source: ${source}`;
+  const rhtml = result.recommendations.map(r => `<div style="padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem">${r}</div>`).join('');
+  document.getElementById('pred-recs').innerHTML = `<h4 style="margin-bottom:8px">Suggestions</h4>${rhtml}`;
+}
+
+/* ====== RECOMMENDATIONS ====== */
+const recommendations = [
+  {id:1, text:'Increase study hours to 15h/week to target an A grade', detail:'Research shows consistent daily study yields better results than cramming.', priority:'red'},
+  {id:2, text:'Join a study group for your weakest subject', detail:'Collaborative learning improves understanding by up to 30%.', priority:'red'},
+  {id:3, text:'Complete all remaining assignments before week 10', detail:'You have 2 pending assignments that could impact your grade.', priority:'yellow'},
+  {id:4, text:'Try active recall with flashcards for memorization', detail:'Active recall is 2x more effective than passive re-reading.', priority:'yellow'},
+  {id:5, text:'Maintain your excellent attendance streak', detail:'Your 92% attendance is above average. Keep it up!', priority:'green'},
+  {id:6, text:'Use office hours for topics scoring below 70%', detail:'Direct faculty interaction can clarify difficult concepts efficiently.', priority:'yellow'},
+  {id:7, text:'Schedule 7-8 hours of sleep on school nights', detail:'Sleep consolidates memory and improves next-day focus.', priority:'green'},
+  {id:8, text:'Reduce extracurricular load during exam periods', detail:'Temporarily reducing commitments can free up critical study time.', priority:'red'}
+];
+
+function renderRecs() {
+  const el = document.getElementById('rec-list');
+  const order = {red:0, yellow:1, green:2};
+  const sorted = [...recommendations].sort((a, b) => order[a.priority] - order[b.priority]);
+  el.innerHTML = sorted.map(r => `
+    <div class="card rec-card ${r.priority}" id="rec-${r.id}">
+      <input type="checkbox" onchange="toggleRec(${r.id}, this.checked)" title="Mark as done">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <span class="priority">${r.priority.toUpperCase()}</span>
+          <strong style="font-size:.95rem">${r.text}</strong>
+        </div>
+        <div style="font-size:.85rem;color:var(--text2)">${r.detail}</div>
+      </div>
+    </div>`).join('');
+}
+renderRecs();
+
+function toggleRec(id, done) {
+  const el = document.getElementById('rec-' + id);
+  el.classList.toggle('done', done);
+  logEvent('recommendation_interaction', {recommendation_id: id, action: done ? 'marked_done' : 'unmarked', text: recommendations.find(r => r.id === id).text});
+}
+
+/* ====== HISTORY ====== */
+const historyData = [
+  {date:'2025-09-15', predicted:74, actual:71},
+  {date:'2025-10-01', predicted:76, actual:78},
+  {date:'2025-10-15', predicted:72, actual:68},
+  {date:'2025-11-01', predicted:80, actual:81},
+  {date:'2025-11-15', predicted:77, actual:75},
+  {date:'2025-12-01', predicted:82, actual:85},
+  {date:'2026-01-10', predicted:79, actual:77},
+  {date:'2026-01-25', predicted:78, actual:null}
+];
+
+function renderHistory() {
+  const tbody = document.getElementById('history-table');
+  tbody.innerHTML = historyData.map(h => {
+    const diff = h.actual !== null ? h.actual - h.predicted : null;
+    const diffStr = diff !== null ? (diff >= 0 ? `<span class="diff-pos">+${diff}</span>` : `<span class="diff-neg">${diff}</span>`) : '<span style="color:var(--text2)">Pending</span>';
+    return `<tr><td>${h.date}</td><td>${h.predicted}</td><td>${h.actual !== null ? h.actual : '--'}</td><td>${diffStr}</td></tr>`;
+  }).join('');
+  const chartData = historyData.filter(h => h.actual !== null).slice(-6);
+  const el = document.getElementById('history-chart');
+  el.innerHTML = '';
+  chartData.forEach(h => {
+    el.innerHTML += `<div class="bar-col">
+      <div class="bar-val" style="font-size:.65rem">${h.predicted}/${h.actual}</div>
+      <div style="display:flex;gap:2px;align-items:flex-end;width:100%;height:100%">
+        <div class="bar" style="height:${h.predicted}%;background:var(--primary);flex:1"></div>
+        <div class="bar" style="height:${h.actual}%;background:var(--secondary);flex:1"></div>
+      </div>
+      <div class="bar-label">${h.date.slice(5)}</div>
+    </div>`;
+  });
+}
+renderHistory();
+
+/* ====== SETTINGS ====== */
+function handleThemeToggle(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : '');
+  logEvent('settings_change', {setting: 'theme', value: dark ? 'dark' : 'light'});
+}
+
+function handleSettingsChange(key, value) {
+  logEvent('settings_change', {setting: key, value});
+  if (key === 'name') {
+    document.getElementById('dash-name').textContent = value || 'Student';
+  }
+}
+
+/* ====== INIT ====== */
+logEvent('page_view', {to: 'dashboard', initial: true});
+</script>
+</body>
+</html>

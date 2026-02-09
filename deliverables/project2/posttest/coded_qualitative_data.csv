@@ -1,0 +1,241 @@
+participant_id,response_type,original_text,code,theme,coder
+P001,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P001,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P001,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P001,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P001,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,data_sharing_control,Privacy,LLM_coder_1
+P001,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,data_sharing_control,Privacy,LLM_coder_2
+P002,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,progress_visualization_value,Engagement & Motivation,LLM_coder_1
+P002,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,progress_visualization_value,Engagement & Motivation,LLM_coder_2
+P002,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,mobile_responsiveness,Usability,LLM_coder_1
+P002,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,mobile_responsiveness,Usability,LLM_coder_2
+P002,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,data_sharing_control,Privacy,LLM_coder_1
+P002,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,data_sharing_control,Privacy,LLM_coder_2
+P003,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,transparency_of_predictions,Trust & Transparency,LLM_coder_1
+P003,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P003,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,explainability_of_recommendations,Trust & Transparency,LLM_coder_1
+P003,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P003,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,progress_visualization_value,Engagement & Motivation,LLM_coder_1
+P003,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,progress_visualization_value,Engagement & Motivation,LLM_coder_2
+P004,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P004,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,goal_setting_support,Engagement & Motivation,LLM_coder_2
+P004,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P004,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P004,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,dashboard_layout,Usability,LLM_coder_1
+P004,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,dashboard_layout,Usability,LLM_coder_2
+P005,positive,The interface was clean and easy to navigate even on my first time using it without needing any tutorial or guidance.,goal_setting_support,Engagement & Motivation,LLM_coder_1
+P005,positive,The interface was clean and easy to navigate even on my first time using it without needing any tutorial or guidance.,trust_building_through_data,Trust & Transparency,LLM_coder_2
+P005,negative,I found the peer comparison feature demotivating because it made me feel behind even when I was doing well in my own terms.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P005,negative,I found the peer comparison feature demotivating because it made me feel behind even when I was doing well in my own terms.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P005,suggestion,Add more granular privacy controls so students can choose exactly which data points are used for predictions and recommendations.,transparency_of_predictions,Trust & Transparency,LLM_coder_1
+P005,suggestion,Add more granular privacy controls so students can choose exactly which data points are used for predictions and recommendations.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P006,positive,Having all my study data in one place was extremely convenient and saved me time compared to tracking things manually.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P006,positive,Having all my study data in one place was extremely convenient and saved me time compared to tracking things manually.,navigation_ease,Usability,LLM_coder_2
+P006,negative,The notification frequency was too high by default and I had to spend time adjusting settings before it became manageable.,anonymity_in_comparisons,Privacy,LLM_coder_1
+P006,negative,The notification frequency was too high by default and I had to spend time adjusting settings before it became manageable.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P006,suggestion,Create a quick start guide or onboarding tutorial because the first time experience could be overwhelming for less tech savvy users.,gamification_appeal,Engagement & Motivation,LLM_coder_1
+P006,suggestion,Create a quick start guide or onboarding tutorial because the first time experience could be overwhelming for less tech savvy users.,dashboard_layout,Usability,LLM_coder_2
+P007,positive,The notification system was well balanced and did not feel intrusive while still keeping me on track with my study goals.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P007,positive,The notification system was well balanced and did not feel intrusive while still keeping me on track with my study goals.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P007,negative,Some of the AI explanations were too technical and hard to understand which made me question whether the recommendations were valid.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P007,negative,Some of the AI explanations were too technical and hard to understand which made me question whether the recommendations were valid.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P007,suggestion,Include integration with popular calendar apps so study schedules and reminders sync automatically without manual data entry.,mobile_responsiveness,Usability,LLM_coder_1
+P007,suggestion,Include integration with popular calendar apps so study schedules and reminders sync automatically without manual data entry.,mobile_responsiveness,Usability,LLM_coder_2
+P008,positive,I liked the progress visualization feature because seeing my improvement over time kept me motivated to continue using the tool.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P008,positive,I liked the progress visualization feature because seeing my improvement over time kept me motivated to continue using the tool.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P008,negative,The tool did not integrate well with my existing study workflow and felt like an additional burden rather than a time saver.,personalization_quality,AI Accuracy,LLM_coder_1
+P008,negative,The tool did not integrate well with my existing study workflow and felt like an additional burden rather than a time saver.,data_sharing_control,Privacy,LLM_coder_2
+P008,suggestion,Add a feature to compare different study strategies with evidence based explanations so students can make informed choices.,user_control_over_AI,Trust & Transparency,LLM_coder_1
+P008,suggestion,Add a feature to compare different study strategies with evidence based explanations so students can make informed choices.,user_control_over_AI,Trust & Transparency,LLM_coder_2
+P009,positive,The study method recommendations actually introduced me to techniques I had not tried before and some of them worked really well.,intuitive_interface,Usability,LLM_coder_1
+P009,positive,The study method recommendations actually introduced me to techniques I had not tried before and some of them worked really well.,intuitive_interface,Usability,LLM_coder_2
+P009,negative,I noticed the system sometimes repeated the same recommendations even after I had already tried them and they did not work for me.,mobile_responsiveness,Usability,LLM_coder_1
+P009,negative,I noticed the system sometimes repeated the same recommendations even after I had already tried them and they did not work for me.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P009,suggestion,Provide weekly summary reports via email for students who do not want to log in frequently but still want to stay informed.,data_sharing_control,Privacy,LLM_coder_1
+P009,suggestion,Provide weekly summary reports via email for students who do not want to log in frequently but still want to stay informed.,mobile_responsiveness,Usability,LLM_coder_2
+P010,positive,Overall the experience felt trustworthy because the tool was transparent about what data it was using and how it made predictions.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P010,positive,Overall the experience felt trustworthy because the tool was transparent about what data it was using and how it made predictions.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P010,negative,The mobile experience was not as smooth as the desktop version and some features were hard to access on a smaller screen.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P010,negative,The mobile experience was not as smooth as the desktop version and some features were hard to access on a smaller screen.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P010,suggestion,Allow customization of the dashboard layout so each student can prioritize the information that matters most to their workflow.,data_sharing_control,Privacy,LLM_coder_1
+P010,suggestion,Allow customization of the dashboard layout so each student can prioritize the information that matters most to their workflow.,data_sharing_control,Privacy,LLM_coder_2
+P011,positive,The goal setting feature helped me break down my semester targets into manageable weekly objectives which reduced my anxiety.,goal_setting_support,Engagement & Motivation,LLM_coder_1
+P011,positive,The goal setting feature helped me break down my semester targets into manageable weekly objectives which reduced my anxiety.,goal_setting_support,Engagement & Motivation,LLM_coder_2
+P011,negative,The accuracy of grade predictions fluctuated a lot between weeks which made it hard to rely on them for planning purposes.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P011,negative,The accuracy of grade predictions fluctuated a lot between weeks which made it hard to rely on them for planning purposes.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P011,suggestion,Add accessibility features like screen reader support and high contrast themes to make the tool usable for all students.,privacy_settings_granularity,Privacy,LLM_coder_1
+P011,suggestion,Add accessibility features like screen reader support and high contrast themes to make the tool usable for all students.,clear_communication_of_AI_logic,Trust & Transparency,LLM_coder_2
+P012,positive,I was impressed by how quickly the system adapted to my study habits and started giving more relevant suggestions after just a few sessions.,trust_building_through_data,Trust & Transparency,LLM_coder_1
+P012,positive,I was impressed by how quickly the system adapted to my study habits and started giving more relevant suggestions after just a few sessions.,trust_building_through_data,Trust & Transparency,LLM_coder_2
+P012,negative,There was no easy way to provide feedback on recommendations which meant the system could not learn from my actual preferences.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P012,negative,There was no easy way to provide feedback on recommendations which meant the system could not learn from my actual preferences.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P012,suggestion,Include a way to temporarily pause data collection during breaks without losing historical data or resetting the AI model.,clear_communication_of_AI_logic,Trust & Transparency,LLM_coder_1
+P012,suggestion,Include a way to temporarily pause data collection during breaks without losing historical data or resetting the AI model.,clear_communication_of_AI_logic,Trust & Transparency,LLM_coder_2
+P013,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,intuitive_interface,Usability,LLM_coder_1
+P013,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,intuitive_interface,Usability,LLM_coder_2
+P013,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,explainability_of_recommendations,Trust & Transparency,LLM_coder_1
+P013,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P013,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,user_control_over_AI,Trust & Transparency,LLM_coder_1
+P013,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,mobile_responsiveness,Usability,LLM_coder_2
+P014,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P014,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P014,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,data_collection_concern,Privacy,LLM_coder_1
+P014,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P014,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,data_sharing_control,Privacy,LLM_coder_1
+P014,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,data_sharing_control,Privacy,LLM_coder_2
+P015,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,trust_building_through_data,Trust & Transparency,LLM_coder_1
+P015,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,trust_building_through_data,Trust & Transparency,LLM_coder_2
+P015,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,anonymity_in_comparisons,Privacy,LLM_coder_1
+P015,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,anonymity_in_comparisons,Privacy,LLM_coder_2
+P015,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,dashboard_layout,Usability,LLM_coder_1
+P015,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,mobile_responsiveness,Usability,LLM_coder_2
+P016,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,transparency_of_predictions,Trust & Transparency,LLM_coder_1
+P016,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P016,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,onboarding_experience,Usability,LLM_coder_1
+P016,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,data_sharing_control,Privacy,LLM_coder_2
+P016,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,progress_visualization_value,Engagement & Motivation,LLM_coder_1
+P016,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,mobile_responsiveness,Usability,LLM_coder_2
+P017,positive,The interface was clean and easy to navigate even on my first time using it without needing any tutorial or guidance.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P017,positive,The interface was clean and easy to navigate even on my first time using it without needing any tutorial or guidance.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P017,negative,I found the peer comparison feature demotivating because it made me feel behind even when I was doing well in my own terms.,mobile_responsiveness,Usability,LLM_coder_1
+P017,negative,I found the peer comparison feature demotivating because it made me feel behind even when I was doing well in my own terms.,loading_performance,Usability,LLM_coder_2
+P017,suggestion,Add more granular privacy controls so students can choose exactly which data points are used for predictions and recommendations.,privacy_settings_granularity,Privacy,LLM_coder_1
+P017,suggestion,Add more granular privacy controls so students can choose exactly which data points are used for predictions and recommendations.,dashboard_layout,Usability,LLM_coder_2
+P018,positive,Having all my study data in one place was extremely convenient and saved me time compared to tracking things manually.,navigation_ease,Usability,LLM_coder_1
+P018,positive,Having all my study data in one place was extremely convenient and saved me time compared to tracking things manually.,navigation_ease,Usability,LLM_coder_2
+P018,negative,The notification frequency was too high by default and I had to spend time adjusting settings before it became manageable.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P018,negative,The notification frequency was too high by default and I had to spend time adjusting settings before it became manageable.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P018,suggestion,Create a quick start guide or onboarding tutorial because the first time experience could be overwhelming for less tech savvy users.,privacy_settings_granularity,Privacy,LLM_coder_1
+P018,suggestion,Create a quick start guide or onboarding tutorial because the first time experience could be overwhelming for less tech savvy users.,privacy_settings_granularity,Privacy,LLM_coder_2
+P019,positive,The notification system was well balanced and did not feel intrusive while still keeping me on track with my study goals.,navigation_ease,Usability,LLM_coder_1
+P019,positive,The notification system was well balanced and did not feel intrusive while still keeping me on track with my study goals.,navigation_ease,Usability,LLM_coder_2
+P019,negative,Some of the AI explanations were too technical and hard to understand which made me question whether the recommendations were valid.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P019,negative,Some of the AI explanations were too technical and hard to understand which made me question whether the recommendations were valid.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P019,suggestion,Include integration with popular calendar apps so study schedules and reminders sync automatically without manual data entry.,onboarding_experience,Usability,LLM_coder_1
+P019,suggestion,Include integration with popular calendar apps so study schedules and reminders sync automatically without manual data entry.,onboarding_experience,Usability,LLM_coder_2
+P020,positive,I liked the progress visualization feature because seeing my improvement over time kept me motivated to continue using the tool.,trust_building_through_data,Trust & Transparency,LLM_coder_1
+P020,positive,I liked the progress visualization feature because seeing my improvement over time kept me motivated to continue using the tool.,trust_building_through_data,Trust & Transparency,LLM_coder_2
+P020,negative,The tool did not integrate well with my existing study workflow and felt like an additional burden rather than a time saver.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P020,negative,The tool did not integrate well with my existing study workflow and felt like an additional burden rather than a time saver.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P020,suggestion,Add a feature to compare different study strategies with evidence based explanations so students can make informed choices.,motivational_features,Engagement & Motivation,LLM_coder_1
+P020,suggestion,Add a feature to compare different study strategies with evidence based explanations so students can make informed choices.,motivational_features,Engagement & Motivation,LLM_coder_2
+P021,positive,The study method recommendations actually introduced me to techniques I had not tried before and some of them worked really well.,personalization_quality,AI Accuracy,LLM_coder_1
+P021,positive,The study method recommendations actually introduced me to techniques I had not tried before and some of them worked really well.,personalization_quality,AI Accuracy,LLM_coder_2
+P021,negative,I noticed the system sometimes repeated the same recommendations even after I had already tried them and they did not work for me.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P021,negative,I noticed the system sometimes repeated the same recommendations even after I had already tried them and they did not work for me.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P021,suggestion,Provide weekly summary reports via email for students who do not want to log in frequently but still want to stay informed.,motivational_features,Engagement & Motivation,LLM_coder_1
+P021,suggestion,Provide weekly summary reports via email for students who do not want to log in frequently but still want to stay informed.,motivational_features,Engagement & Motivation,LLM_coder_2
+P022,positive,Overall the experience felt trustworthy because the tool was transparent about what data it was using and how it made predictions.,intuitive_interface,Usability,LLM_coder_1
+P022,positive,Overall the experience felt trustworthy because the tool was transparent about what data it was using and how it made predictions.,intuitive_interface,Usability,LLM_coder_2
+P022,negative,The mobile experience was not as smooth as the desktop version and some features were hard to access on a smaller screen.,anonymity_in_comparisons,Privacy,LLM_coder_1
+P022,negative,The mobile experience was not as smooth as the desktop version and some features were hard to access on a smaller screen.,anonymity_in_comparisons,Privacy,LLM_coder_2
+P022,suggestion,Allow customization of the dashboard layout so each student can prioritize the information that matters most to their workflow.,progress_visualization_value,Engagement & Motivation,LLM_coder_1
+P022,suggestion,Allow customization of the dashboard layout so each student can prioritize the information that matters most to their workflow.,progress_visualization_value,Engagement & Motivation,LLM_coder_2
+P023,positive,The goal setting feature helped me break down my semester targets into manageable weekly objectives which reduced my anxiety.,intuitive_interface,Usability,LLM_coder_1
+P023,positive,The goal setting feature helped me break down my semester targets into manageable weekly objectives which reduced my anxiety.,intuitive_interface,Usability,LLM_coder_2
+P023,negative,The accuracy of grade predictions fluctuated a lot between weeks which made it hard to rely on them for planning purposes.,explainability_of_recommendations,Trust & Transparency,LLM_coder_1
+P023,negative,The accuracy of grade predictions fluctuated a lot between weeks which made it hard to rely on them for planning purposes.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P023,suggestion,Add accessibility features like screen reader support and high contrast themes to make the tool usable for all students.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P023,suggestion,Add accessibility features like screen reader support and high contrast themes to make the tool usable for all students.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P024,positive,I was impressed by how quickly the system adapted to my study habits and started giving more relevant suggestions after just a few sessions.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P024,positive,I was impressed by how quickly the system adapted to my study habits and started giving more relevant suggestions after just a few sessions.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P024,negative,There was no easy way to provide feedback on recommendations which meant the system could not learn from my actual preferences.,mobile_responsiveness,Usability,LLM_coder_1
+P024,negative,There was no easy way to provide feedback on recommendations which meant the system could not learn from my actual preferences.,mobile_responsiveness,Usability,LLM_coder_2
+P024,suggestion,Include a way to temporarily pause data collection during breaks without losing historical data or resetting the AI model.,dashboard_layout,Usability,LLM_coder_1
+P024,suggestion,Include a way to temporarily pause data collection during breaks without losing historical data or resetting the AI model.,dashboard_layout,Usability,LLM_coder_2
+P025,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,goal_setting_support,Engagement & Motivation,LLM_coder_1
+P025,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,goal_setting_support,Engagement & Motivation,LLM_coder_2
+P025,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,data_collection_concern,Privacy,LLM_coder_1
+P025,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,data_collection_concern,Privacy,LLM_coder_2
+P025,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,gamification_appeal,Engagement & Motivation,LLM_coder_1
+P025,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,gamification_appeal,Engagement & Motivation,LLM_coder_2
+P026,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,trust_building_through_data,Trust & Transparency,LLM_coder_1
+P026,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P026,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,onboarding_experience,Usability,LLM_coder_1
+P026,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,onboarding_experience,Usability,LLM_coder_2
+P026,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,privacy_settings_granularity,Privacy,LLM_coder_1
+P026,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,privacy_settings_granularity,Privacy,LLM_coder_2
+P027,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P027,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P027,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,mobile_responsiveness,Usability,LLM_coder_1
+P027,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,mobile_responsiveness,Usability,LLM_coder_2
+P027,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,progress_visualization_value,Engagement & Motivation,LLM_coder_1
+P027,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,progress_visualization_value,Engagement & Motivation,LLM_coder_2
+P028,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,personalization_quality,AI Accuracy,LLM_coder_1
+P028,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,personalization_quality,AI Accuracy,LLM_coder_2
+P028,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,explainability_of_recommendations,Trust & Transparency,LLM_coder_1
+P028,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P028,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,motivational_features,Engagement & Motivation,LLM_coder_1
+P028,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,motivational_features,Engagement & Motivation,LLM_coder_2
+P029,positive,The interface was clean and easy to navigate even on my first time using it without needing any tutorial or guidance.,trust_building_through_data,Trust & Transparency,LLM_coder_1
+P029,positive,The interface was clean and easy to navigate even on my first time using it without needing any tutorial or guidance.,trust_building_through_data,Trust & Transparency,LLM_coder_2
+P029,negative,I found the peer comparison feature demotivating because it made me feel behind even when I was doing well in my own terms.,mobile_responsiveness,Usability,LLM_coder_1
+P029,negative,I found the peer comparison feature demotivating because it made me feel behind even when I was doing well in my own terms.,mobile_responsiveness,Usability,LLM_coder_2
+P029,suggestion,Add more granular privacy controls so students can choose exactly which data points are used for predictions and recommendations.,user_control_over_AI,Trust & Transparency,LLM_coder_1
+P029,suggestion,Add more granular privacy controls so students can choose exactly which data points are used for predictions and recommendations.,user_control_over_AI,Trust & Transparency,LLM_coder_2
+P030,positive,Having all my study data in one place was extremely convenient and saved me time compared to tracking things manually.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P030,positive,Having all my study data in one place was extremely convenient and saved me time compared to tracking things manually.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P030,negative,The notification frequency was too high by default and I had to spend time adjusting settings before it became manageable.,mobile_responsiveness,Usability,LLM_coder_1
+P030,negative,The notification frequency was too high by default and I had to spend time adjusting settings before it became manageable.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P030,suggestion,Create a quick start guide or onboarding tutorial because the first time experience could be overwhelming for less tech savvy users.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P030,suggestion,Create a quick start guide or onboarding tutorial because the first time experience could be overwhelming for less tech savvy users.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P031,positive,The notification system was well balanced and did not feel intrusive while still keeping me on track with my study goals.,goal_setting_support,Engagement & Motivation,LLM_coder_1
+P031,positive,The notification system was well balanced and did not feel intrusive while still keeping me on track with my study goals.,goal_setting_support,Engagement & Motivation,LLM_coder_2
+P031,negative,Some of the AI explanations were too technical and hard to understand which made me question whether the recommendations were valid.,loading_performance,Usability,LLM_coder_1
+P031,negative,Some of the AI explanations were too technical and hard to understand which made me question whether the recommendations were valid.,loading_performance,Usability,LLM_coder_2
+P031,suggestion,Include integration with popular calendar apps so study schedules and reminders sync automatically without manual data entry.,clear_communication_of_AI_logic,Trust & Transparency,LLM_coder_1
+P031,suggestion,Include integration with popular calendar apps so study schedules and reminders sync automatically without manual data entry.,clear_communication_of_AI_logic,Trust & Transparency,LLM_coder_2
+P032,positive,I liked the progress visualization feature because seeing my improvement over time kept me motivated to continue using the tool.,goal_setting_support,Engagement & Motivation,LLM_coder_1
+P032,positive,I liked the progress visualization feature because seeing my improvement over time kept me motivated to continue using the tool.,intuitive_interface,Usability,LLM_coder_2
+P032,negative,The tool did not integrate well with my existing study workflow and felt like an additional burden rather than a time saver.,explainability_of_recommendations,Trust & Transparency,LLM_coder_1
+P032,negative,The tool did not integrate well with my existing study workflow and felt like an additional burden rather than a time saver.,explainability_of_recommendations,Trust & Transparency,LLM_coder_2
+P032,suggestion,Add a feature to compare different study strategies with evidence based explanations so students can make informed choices.,mobile_responsiveness,Usability,LLM_coder_1
+P032,suggestion,Add a feature to compare different study strategies with evidence based explanations so students can make informed choices.,mobile_responsiveness,Usability,LLM_coder_2
+P033,positive,The study method recommendations actually introduced me to techniques I had not tried before and some of them worked really well.,prediction_accuracy,AI Accuracy,LLM_coder_1
+P033,positive,The study method recommendations actually introduced me to techniques I had not tried before and some of them worked really well.,prediction_accuracy,AI Accuracy,LLM_coder_2
+P033,negative,I noticed the system sometimes repeated the same recommendations even after I had already tried them and they did not work for me.,anonymity_in_comparisons,Privacy,LLM_coder_1
+P033,negative,I noticed the system sometimes repeated the same recommendations even after I had already tried them and they did not work for me.,anonymity_in_comparisons,Privacy,LLM_coder_2
+P033,suggestion,Provide weekly summary reports via email for students who do not want to log in frequently but still want to stay informed.,privacy_settings_granularity,Privacy,LLM_coder_1
+P033,suggestion,Provide weekly summary reports via email for students who do not want to log in frequently but still want to stay informed.,privacy_settings_granularity,Privacy,LLM_coder_2
+P034,positive,Overall the experience felt trustworthy because the tool was transparent about what data it was using and how it made predictions.,intuitive_interface,Usability,LLM_coder_1
+P034,positive,Overall the experience felt trustworthy because the tool was transparent about what data it was using and how it made predictions.,intuitive_interface,Usability,LLM_coder_2
+P034,negative,The mobile experience was not as smooth as the desktop version and some features were hard to access on a smaller screen.,anonymity_in_comparisons,Privacy,LLM_coder_1
+P034,negative,The mobile experience was not as smooth as the desktop version and some features were hard to access on a smaller screen.,anonymity_in_comparisons,Privacy,LLM_coder_2
+P034,suggestion,Allow customization of the dashboard layout so each student can prioritize the information that matters most to their workflow.,onboarding_experience,Usability,LLM_coder_1
+P034,suggestion,Allow customization of the dashboard layout so each student can prioritize the information that matters most to their workflow.,onboarding_experience,Usability,LLM_coder_2
+P035,positive,The goal setting feature helped me break down my semester targets into manageable weekly objectives which reduced my anxiety.,transparency_of_predictions,Trust & Transparency,LLM_coder_1
+P035,positive,The goal setting feature helped me break down my semester targets into manageable weekly objectives which reduced my anxiety.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P035,negative,The accuracy of grade predictions fluctuated a lot between weeks which made it hard to rely on them for planning purposes.,data_sharing_control,Privacy,LLM_coder_1
+P035,negative,The accuracy of grade predictions fluctuated a lot between weeks which made it hard to rely on them for planning purposes.,data_sharing_control,Privacy,LLM_coder_2
+P035,suggestion,Add accessibility features like screen reader support and high contrast themes to make the tool usable for all students.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P035,suggestion,Add accessibility features like screen reader support and high contrast themes to make the tool usable for all students.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P036,positive,I was impressed by how quickly the system adapted to my study habits and started giving more relevant suggestions after just a few sessions.,personalization_quality,AI Accuracy,LLM_coder_1
+P036,positive,I was impressed by how quickly the system adapted to my study habits and started giving more relevant suggestions after just a few sessions.,personalization_quality,AI Accuracy,LLM_coder_2
+P036,negative,There was no easy way to provide feedback on recommendations which meant the system could not learn from my actual preferences.,recommendation_relevance,AI Accuracy,LLM_coder_1
+P036,negative,There was no easy way to provide feedback on recommendations which meant the system could not learn from my actual preferences.,recommendation_relevance,AI Accuracy,LLM_coder_2
+P036,suggestion,Include a way to temporarily pause data collection during breaks without losing historical data or resetting the AI model.,transparency_of_predictions,Trust & Transparency,LLM_coder_1
+P036,suggestion,Include a way to temporarily pause data collection during breaks without losing historical data or resetting the AI model.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P037,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,notification_effectiveness,Engagement & Motivation,LLM_coder_1
+P037,positive,The dashboard was really intuitive and I liked how it visualized my study patterns over the past few weeks clearly.,notification_effectiveness,Engagement & Motivation,LLM_coder_2
+P037,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,mobile_responsiveness,Usability,LLM_coder_1
+P037,negative,The predictions did not always feel accurate especially early on when the system did not have much data about my study habits.,mobile_responsiveness,Usability,LLM_coder_2
+P037,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,privacy_settings_granularity,Privacy,LLM_coder_1
+P037,suggestion,Add a feature that lets students set their own confidence levels for predictions so the system knows when to be more cautious.,privacy_settings_granularity,Privacy,LLM_coder_2
+P038,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,progress_visualization_value,Engagement & Motivation,LLM_coder_1
+P038,positive,I found the grade prediction feature very motivating because it showed me how small changes in effort could improve my outcomes.,transparency_of_predictions,Trust & Transparency,LLM_coder_2
+P038,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,onboarding_experience,Usability,LLM_coder_1
+P038,negative,I was uncomfortable with how much personal data the tool seemed to require before I could even start using the basic features.,onboarding_experience,Usability,LLM_coder_2
+P038,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,mobile_responsiveness,Usability,LLM_coder_1
+P038,suggestion,Include a dark mode option because I often study late at night and the bright interface strains my eyes during evening sessions.,privacy_settings_granularity,Privacy,LLM_coder_2
+P039,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P039,positive,The recommendation system felt personalized and relevant to my actual courses which made me trust it more than I expected.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P039,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,adaptation_over_time,AI Accuracy,LLM_coder_1
+P039,negative,Some of the study recommendations felt too generic and did not account for the specific demands of my major or course load.,adaptation_over_time,AI Accuracy,LLM_coder_2
+P039,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,data_sharing_control,Privacy,LLM_coder_1
+P039,suggestion,Allow users to export their study data in standard formats so they can do their own analysis or share it with advisors.,data_sharing_control,Privacy,LLM_coder_2
+P040,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,intuitive_interface,Usability,LLM_coder_1
+P040,positive,I appreciated how the tool explained its suggestions rather than just telling me what to do without any reasoning behind it.,intuitive_interface,Usability,LLM_coder_2
+P040,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,data_sharing_control,Privacy,LLM_coder_1
+P040,negative,The loading times were frustrating especially when switching between different sections of the dashboard during a study session.,data_sharing_control,Privacy,LLM_coder_2
+P040,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,privacy_settings_granularity,Privacy,LLM_coder_1
+P040,suggestion,Implement a social feature where study groups can share goals and track collective progress on shared courses or projects.,privacy_settings_granularity,Privacy,LLM_coder_2
