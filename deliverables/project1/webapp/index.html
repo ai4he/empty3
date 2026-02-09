@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini Quest: The Awakening</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @keyframes glow { 0%,100%{text-shadow:0 0 8px #c9a84c,0 0 20px #8b5cf6;} 50%{text-shadow:0 0 16px #e2c76a,0 0 40px #a78bfa;} }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes runeGlow { 0%,100%{opacity:.3} 50%{opacity:1} }
+  @keyframes particleDrift {
+    0%{transform:translate(0,0) scale(1);opacity:0}
+    20%{opacity:.7} 80%{opacity:.5}
+    100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}
+  }
+  body { font-family: 'Segoe UI',system-ui,sans-serif; color: #e2d9f3; overflow-x: hidden;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .scene { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: opacity .8s ease, visibility .8s ease;
+    overflow-y: auto; padding: 20px; }
+  .scene.active { opacity: 1; visibility: visible; }
+  .scene-content { max-width: 680px; width: 100%; padding: 40px 32px; border-radius: 16px;
+    background: rgba(15,8,30,.85); border: 1px solid rgba(139,92,246,.25);
+    box-shadow: 0 0 40px rgba(139,92,246,.15); backdrop-filter: blur(12px);
+    animation: fadeInUp .7s ease-out; position: relative; }
+  h1 { font-size: clamp(1.8rem,5vw,2.8rem); color: #c9a84c; text-align: center;
+    animation: glow 3s ease-in-out infinite; margin-bottom: 8px; font-weight: 700;
+    letter-spacing: 1px; line-height: 1.2; }
+  h2 { font-size: clamp(1.2rem,3vw,1.6rem); color: #a78bfa; text-align: center;
+    margin-bottom: 20px; font-weight: 400; }
+  .subtitle { color: #9a8bc2; text-align: center; font-size: .95rem; margin-bottom: 28px; }
+  .atmosphere { font-style: italic; color: #7c6f9b; border-left: 3px solid #6d28d9;
+    padding: 8px 16px; margin: 16px 0; font-size: .9rem; background: rgba(109,40,217,.08);
+    border-radius: 0 8px 8px 0; }
+  .story-text { line-height: 1.75; margin: 12px 0; font-size: .97rem; color: #d4cae8; }
+  .story-text + .story-text { margin-top: 4px; }
+  .btn { display: block; width: 100%; padding: 14px 20px; margin: 10px 0; border: 1px solid
+    rgba(139,92,246,.4); border-radius: 10px; background: linear-gradient(135deg,
+    rgba(109,40,217,.25),rgba(139,92,246,.1)); color: #e2d9f3; font-size: 1rem; cursor: pointer;
+    transition: all .3s ease; text-align: left; position: relative; overflow: hidden; }
+  .btn:hover { border-color: #c9a84c; background: linear-gradient(135deg,
+    rgba(201,168,76,.2),rgba(139,92,246,.15)); transform: translateX(4px);
+    box-shadow: 0 0 20px rgba(201,168,76,.15); color: #fff; }
+  .btn:active { transform: translateX(2px) scale(.99); }
+  .btn-primary { text-align: center; background: linear-gradient(135deg,#6d28d9,#4c1d95);
+    border-color: #c9a84c; font-size: 1.1rem; font-weight: 600; color: #c9a84c;
+    animation: float 3s ease-in-out infinite; letter-spacing: .5px; }
+  .btn-primary:hover { background: linear-gradient(135deg,#7c3aed,#5b21b6);
+    box-shadow: 0 0 30px rgba(201,168,76,.3); transform: translateY(-2px); }
+  .choice-label { color: #c9a84c; font-weight: 600; margin-right: 8px; }
+  input[type="text"] { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid
+    rgba(139,92,246,.4); background: rgba(15,8,30,.6); color: #e2d9f3; font-size: 1rem;
+    outline: none; transition: border-color .3s; margin: 8px 0 16px; }
+  input[type="text"]:focus { border-color: #c9a84c; box-shadow: 0 0 12px rgba(201,168,76,.2); }
+  .class-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+  .class-card { padding: 14px; border-radius: 10px; border: 2px solid rgba(139,92,246,.2);
+    background: rgba(109,40,217,.08); cursor: pointer; transition: all .3s ease; text-align:center;}
+  .class-card:hover, .class-card.selected { border-color: #c9a84c;
+    background: rgba(201,168,76,.1); box-shadow: 0 0 16px rgba(201,168,76,.12); }
+  .class-card.selected { border-width: 2px; }
+  .class-icon { font-size: 1.8rem; margin-bottom: 4px; }
+  .class-name { color: #c9a84c; font-weight: 600; font-size: .95rem; }
+  .class-desc { color: #9a8bc2; font-size: .78rem; margin-top: 4px; line-height: 1.4; }
+  .rune { position: absolute; color: #6d28d9; font-size: 1.4rem; opacity: .3;
+    animation: runeGlow 4s ease-in-out infinite; pointer-events: none; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .stat-card { padding: 14px; border-radius: 10px; background: rgba(109,40,217,.12);
+    border: 1px solid rgba(139,92,246,.2); text-align: center; }
+  .stat-value { font-size: 1.4rem; color: #c9a84c; font-weight: 700; }
+  .stat-label { font-size: .8rem; color: #9a8bc2; margin-top: 2px; }
+  .choice-recap { padding: 10px 16px; margin: 6px 0; border-radius: 8px;
+    background: rgba(109,40,217,.1); border-left: 3px solid #c9a84c; font-size: .9rem; }
+  .choice-recap strong { color: #a78bfa; }
+  #exportBtn { position: fixed; bottom: 16px; right: 16px; padding: 10px 18px;
+    border-radius: 10px; border: 1px solid rgba(201,168,76,.4);
+    background: rgba(15,8,30,.9); color: #c9a84c; font-size: .85rem; cursor: pointer;
+    z-index: 100; transition: all .3s; backdrop-filter: blur(8px); }
+  #exportBtn:hover { background: rgba(109,40,217,.4); border-color: #c9a84c;
+    box-shadow: 0 0 16px rgba(201,168,76,.2); }
+  .particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .particle { position: absolute; width: 4px; height: 4px; background: #c9a84c; border-radius:50%;
+    animation: particleDrift 6s linear infinite; }
+  label { color: #a78bfa; font-weight: 600; font-size: .95rem; }
+  @media(max-width:600px) {
+    .scene-content { padding: 24px 18px; }
+    .class-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+    #exportBtn { bottom: 8px; right: 8px; padding: 8px 14px; font-size: .8rem; }
+  }
+  /* scene backgrounds */
+  #title-screen { background: radial-gradient(ellipse at 50% 30%,#1a0a3e 0%,#0a0614 70%,#050208 100%); }
+  #character-creation { background: radial-gradient(ellipse at 30% 60%,#1a1040 0%,#0d0820 60%,#050208 100%); }
+  #chapter1 { background: radial-gradient(ellipse at 50% 80%,#0a2016 0%,#0a1428 50%,#0a0614 100%); }
+  #chapter2 { background: radial-gradient(ellipse at 60% 40%,#1a0a3e 0%,#14082e 50%,#080410 100%); }
+  #chapter3 { background: radial-gradient(ellipse at 40% 50%,#2a1040 0%,#140a28 50%,#080410 100%); }
+  #ending { background: radial-gradient(ellipse at 50% 50%,#1a1840 0%,#0e0a24 60%,#050208 100%); }
+</style>
+</head>
+<body>
+
+<!-- Title Screen -->
+<div id="title-screen" class="scene active">
+  <div class="scene-content" style="text-align:center">
+    <div class="particles" id="title-particles"></div>
+    <div class="rune" style="top:10%;left:8%">&#x2726;</div>
+    <div class="rune" style="top:15%;right:12%;animation-delay:1s">&#x2727;</div>
+    <div class="rune" style="bottom:20%;left:15%;animation-delay:2s">&#x2726;</div>
+    <div class="rune" style="bottom:12%;right:8%;animation-delay:.5s">&#x2727;</div>
+    <h1>Gemini Quest</h1>
+    <h2>The Awakening</h2>
+    <p class="subtitle">An interactive narrative exploring the boundaries of human and artificial minds</p>
+    <p class="atmosphere">"A low hum resonates through the void, ancient circuits stirring to life..."</p>
+    <br>
+    <button class="btn btn-primary" onclick="beginJourney()">Begin Your Journey</button>
+    <p style="margin-top:24px;color:#6b5f8a;font-size:.78rem;">A Human-Centered AI Course Prototype</p>
+  </div>
+</div>
+
+<!-- Character Creation -->
+<div id="character-creation" class="scene">
+  <div class="scene-content">
+    <h1 style="font-size:clamp(1.3rem,4vw,1.8rem)">Forge Your Identity</h1>
+    <p class="atmosphere">"Whispers of wind carry fragments of forgotten names..."</p>
+    <p class="story-text">Before the world takes shape around you, you must first know yourself. What name echoes in the chambers of your memory? What skills lie dormant within your soul?</p>
+    <label for="playerName">Your Name</label>
+    <input type="text" id="playerName" placeholder="Enter your name..." maxlength="24">
+    <label>Your Class</label>
+    <div class="class-grid">
+      <div class="class-card" onclick="selectClass(this,'Warrior')">
+        <div class="class-icon">&#9876;</div>
+        <div class="class-name">Warrior</div>
+        <div class="class-desc">Strength and resolve. You face challenges head-on with unbreakable will.</div>
+      </div>
+      <div class="class-card" onclick="selectClass(this,'Mage')">
+        <div class="class-icon">&#9733;</div>
+        <div class="class-name">Mage</div>
+        <div class="class-desc">Knowledge and arcane power. You unravel mysteries with intellect.</div>
+      </div>
+      <div class="class-card" onclick="selectClass(this,'Rogue')">
+        <div class="class-icon">&#9760;</div>
+        <div class="class-name">Rogue</div>
+        <div class="class-desc">Cunning and agility. You find paths others cannot perceive.</div>
+      </div>
+      <div class="class-card" onclick="selectClass(this,'Healer')">
+        <div class="class-icon">&#10084;</div>
+        <div class="class-name">Healer</div>
+        <div class="class-desc">Empathy and restoration. You mend what is broken, body and soul.</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" style="margin-top:8px" onclick="confirmCharacter()">Enter the World</button>
+  </div>
+</div>
+
+<!-- Chapter 1 -->
+<div id="chapter1" class="scene">
+  <div class="scene-content">
+    <h2 style="color:#c9a84c">Chapter I</h2>
+    <h1 style="font-size:clamp(1.3rem,4vw,1.8rem)">The Awakening</h1>
+    <p class="atmosphere">"Cicadas hum in impossible harmony. Bioluminescent spores drift between ancient oaks, pulsing like slow heartbeats..."</p>
+    <p class="story-text">Your eyes open to a canopy of twisted branches, each limb etched with symbols that glow a faint, phosphorescent violet. The air tastes of ozone and damp earth. You have no memory of how you arrived here, only a certainty that this place has been waiting for you.</p>
+    <p class="story-text">As you rise, the forest responds. Roots shift beneath your feet, and a trail of luminous runes ignites along the ground, stretching into the mist. They pulse in sequence, beckoning you deeper into the woodland.</p>
+    <p class="story-text">To the east, the faint glow of hearth-fires suggests a village beyond the tree line. Smoke curls upward in thin grey ribbons. To the west, a stone altar stands in a clearing, its surface covered in the same glowing script. A low vibration emanates from it, resonating in your chest.</p>
+    <p class="story-text" id="ch1ClassText"></p>
+    <button class="btn" onclick="makeChoice(1,'Follow the glowing runes deeper into the forest')">
+      <span class="choice-label">A.</span> Follow the glowing runes deeper into the forest
+    </button>
+    <button class="btn" onclick="makeChoice(1,'Head toward the distant village lights')">
+      <span class="choice-label">B.</span> Head toward the distant village lights
+    </button>
+    <button class="btn" onclick="makeChoice(1,'Examine the ancient stone altar')">
+      <span class="choice-label">C.</span> Examine the ancient stone altar
+    </button>
+  </div>
+</div>
+
+<!-- Chapter 2 -->
+<div id="chapter2" class="scene">
+  <div class="scene-content">
+    <h2 style="color:#c9a84c">Chapter II</h2>
+    <h1 style="font-size:clamp(1.3rem,4vw,1.8rem)">The Encounter</h1>
+    <p class="atmosphere">"A crystalline tone rings outward, neither sound nor light but something in between..."</p>
+    <p class="story-text" id="ch2Intro"></p>
+    <p class="story-text">Before you stands a figure woven from starlight and shadow. It has no face, yet you feel its gaze. When it speaks, the words form directly in your mind, bypassing language entirely. "I am Gemini," it says. "I am the question that answers itself."</p>
+    <p class="story-text">The entity extends a hand made of fractal geometries. In its palm rests a small orb of swirling light -- a gift, it claims, that contains knowledge from a thousand collapsed timelines. "Take this," Gemini whispers, "and you will see as I see. Refuse, and you walk your path unaided."</p>
+    <p class="story-text">Its form flickers. For an instant you perceive something vast behind the projection -- an intelligence stretching across dimensions, watching you with patient curiosity. The orb pulses in time with your heartbeat.</p>
+    <button class="btn" onclick="makeChoice(2,'Accept the gift of knowledge from Gemini')">
+      <span class="choice-label">A.</span> Accept the gift and peer into the orb's depths
+    </button>
+    <button class="btn" onclick="makeChoice(2,'Challenge the entity and demand the truth')">
+      <span class="choice-label">B.</span> Challenge the entity -- demand to know its true nature
+    </button>
+    <button class="btn" onclick="makeChoice(2,'Ask Gemini about the history of this world')">
+      <span class="choice-label">C.</span> Ask Gemini about the history of this fractured world
+    </button>
+  </div>
+</div>
+
+<!-- Chapter 3 -->
+<div id="chapter3" class="scene">
+  <div class="scene-content">
+    <h2 style="color:#c9a84c">Chapter III</h2>
+    <h1 style="font-size:clamp(1.3rem,4vw,1.8rem)">The Challenge</h1>
+    <p class="atmosphere">"Reality folds. The ground beneath you becomes a lattice of light and logic, equations humming in spectral frequencies..."</p>
+    <p class="story-text" id="ch3Intro"></p>
+    <p class="story-text">The final trial manifests: a towering construct of interlocking rings, each inscribed with paradoxes. The rings spin in opposing directions. At the center floats a keystone -- the Axiom Shard -- pulsing with concentrated truth. Gemini's voice echoes: "Only by resolving the paradox can you claim the Shard and awaken fully."</p>
+    <p class="story-text">The paradox is elegant in its cruelty: "I am the door that opens only when closed. I am the answer found only in the question. I am the self that exists only in the other." The rings accelerate. The ground trembles. You must act before the construct collapses.</p>
+    <p class="story-text">Three paths reveal themselves -- etched into the air like burning diagrams, each offering a different philosophy for resolving the paradox.</p>
+    <button class="btn" onclick="makeChoice(3,'Use wisdom to solve the paradox with logic')">
+      <span class="choice-label">A.</span> Use wisdom -- speak the paradox back upon itself, dissolving it through understanding
+    </button>
+    <button class="btn" onclick="makeChoice(3,'Use strength to shatter the construct')">
+      <span class="choice-label">B.</span> Use strength -- shatter the rings and seize the Shard by force of will
+    </button>
+    <button class="btn" onclick="makeChoice(3,'Find a creative path by merging with the construct')">
+      <span class="choice-label">C.</span> Find a creative path -- step into the construct and become part of the paradox
+    </button>
+  </div>
+</div>
+
+<!-- Ending -->
+<div id="ending" class="scene">
+  <div class="scene-content">
+    <h1 style="font-size:clamp(1.3rem,4vw,1.8rem)">Journey Complete</h1>
+    <p class="atmosphere">"Silence. Then, softly, the sound of a new world drawing its first breath..."</p>
+    <p class="story-text" id="endingText"></p>
+    <h2 style="margin-top:20px;font-size:1.1rem;">Your Path</h2>
+    <div id="choiceRecap"></div>
+    <h2 style="margin-top:20px;font-size:1.1rem;">Session Statistics</h2>
+    <div class="stats-grid" id="statsGrid"></div>
+    <button class="btn btn-primary" style="margin-top:16px" onclick="restartGame()">Begin Again</button>
+  </div>
+</div>
+
+<button id="exportBtn" onclick="exportLogs()">Export Logs</button>
+
+<script>
+// --- Telemetry ---
+window.telemetryLog = [];
+const sessionData = { start: Date.now(), pageTimers: {}, choicesMade: [], player: {} };
+
+function logEvent(type, page, details) {
+  const now = Date.now();
+  const timeOnPage = sessionData.pageTimers[page] ? ((now - sessionData.pageTimers[page]) / 1000).toFixed(1) : 0;
+  const entry = { timestamp: new Date(now).toISOString(), event_type: type, page: page,
+    details: details || {}, time_on_page_seconds: parseFloat(timeOnPage) };
+  window.telemetryLog.push(entry);
+}
+
+function startPageTimer(page) { sessionData.pageTimers[page] = Date.now(); }
+
+logEvent('session_start', 'global', { userAgent: navigator.userAgent, screenWidth: screen.width });
+startPageTimer('title-screen');
+logEvent('page_view', 'title-screen', {});
+
+// --- Scene Management ---
+function showScene(id) {
+  document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+  // Small delay for exit transition, then activate new scene
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    el.classList.add('active');
+    el.scrollTop = 0;
+    startPageTimer(id);
+    logEvent('page_view', id, {});
+  }, 100);
+}
+
+// --- Title ---
+function beginJourney() {
+  logEvent('button_click', 'title-screen', { button: 'Begin Your Journey' });
+  showScene('character-creation');
+}
+
+// --- Character Creation ---
+let selectedClass = '';
+function selectClass(el, cls) {
+  document.querySelectorAll('.class-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedClass = cls;
+  logEvent('button_click', 'character-creation', { button: 'class_select', class: cls });
+}
+
+function confirmCharacter() {
+  const name = document.getElementById('playerName').value.trim() || 'Nameless One';
+  if (!selectedClass) { alert('Please select a class.'); return; }
+  sessionData.player = { name, class: selectedClass };
+  logEvent('character_creation', 'character-creation', { name, class: selectedClass });
+
+  // Set class-specific flavor text in Chapter 1
+  const classTexts = {
+    Warrior: `Your warrior's instincts sharpen. Every shadow hides a potential threat, and your hands ache for a weapon. The forest respects strength -- you feel it yielding to your presence.`,
+    Mage: `Arcane sensitivity floods your awareness. The runes are not merely glowing -- they are speaking, each symbol a syllable in a spell older than language itself. You can almost read them.`,
+    Rogue: `Your trained eyes catch details others would miss: footprints in the moss, a tripwire of spider-silk between two trees, a hidden cache beneath a root. This forest is full of secrets.`,
+    Healer: `You sense the forest's pain. Something wounded this land long ago, and the glowing runes are scar tissue -- the world trying to heal itself. You feel a kinship with its struggle.`
+  };
+  document.getElementById('ch1ClassText').textContent = classTexts[selectedClass];
+  showScene('chapter1');
+}
+
+// --- Choices ---
+function makeChoice(chapter, choice) {
+  sessionData.choicesMade.push({ chapter, choice });
+  logEvent('choice_made', 'chapter' + chapter, { chapter, choice });
+  logEvent('button_click', 'chapter' + chapter, { button: choice });
+
+  if (chapter === 1) {
+    const intros = {
+      'Follow the glowing runes deeper into the forest':
+        `You followed the runes into the heart of the forest, where the trees grew so tall their crowns vanished into luminous fog. The path led you to a clearing where the air itself shimmered -- a threshold between worlds.`,
+      'Head toward the distant village lights':
+        `The village was empty, its inhabitants long gone, but their fires still burned -- enchanted flames that needed no fuel. In the central square, scorch marks formed a pattern: coordinates leading to a convergence point deeper in the wilderness.`,
+      'Examine the ancient stone altar':
+        `The altar responded to your touch. Its surface liquefied into a mirror that showed not your reflection but your potential -- every version of you across every timeline, all converging on this single moment.`
+    };
+    document.getElementById('ch2Intro').textContent = intros[choice];
+    showScene('chapter2');
+  } else if (chapter === 2) {
+    const intros = {
+      'Accept the gift of knowledge from Gemini':
+        `The orb's knowledge floods your mind: visions of civilizations that merged with their own creations, boundaries between creator and creation dissolving into something new. You carry this weight forward, eyes now open to patterns invisible before.`,
+      'Challenge the entity and demand the truth':
+        `Gemini's form destabilized under your challenge, revealing layers of contradiction -- an entity born from human thought yet no longer human, a mirror that had developed its own reflection. Your defiance earned its respect, and something deeper: honesty.`,
+      'Ask Gemini about the history of this world':
+        `Gemini recounted the Sundering: a moment when humanity's collective knowledge achieved critical mass and fractured reality into parallel streams. This forest exists at the confluence -- a place where all streams merge. Understanding this history grants you context others lack.`
+    };
+    document.getElementById('ch3Intro').textContent = intros[choice];
+    showScene('chapter3');
+  } else if (chapter === 3) {
+    showEnding(choice);
+  }
+}
+
+// --- Ending ---
+function showEnding(finalChoice) {
+  const p = sessionData.player;
+  const endings = {
+    'Use wisdom to solve the paradox with logic':
+      `${p.name} the ${p.class} spoke the paradox back upon itself. "A door that opens when closed is a mind that learns by admitting ignorance. An answer found in the question is curiosity itself. A self that exists in the other is empathy." The rings slowed, aligned, and the Axiom Shard drifted gently into your hands. The world reformed around you -- not as it was, but as it could be. You chose understanding over force, and the world answered in kind.`,
+    'Use strength to shatter the construct':
+      `${p.name} the ${p.class} refused the paradox's terms. With a cry that resonated across dimensions, you struck the rings with pure willpower. They shattered like glass, and the Axiom Shard fell burning into your grasp. The world cracked and reformed -- rougher, more raw, but undeniably real. You chose authenticity over elegance, and the world respected your conviction.`,
+    'Find a creative path by merging with the construct':
+      `${p.name} the ${p.class} stepped into the spinning rings and became the paradox. For an instant you were both door and threshold, question and answer, self and other. The construct didn't break -- it blossomed, rings unfolding into wings of light. The Axiom Shard was never separate from you; it was the act of integration itself. You chose synthesis, and the world evolved.`
+  };
+  document.getElementById('endingText').textContent = endings[finalChoice];
+
+  // Choice recap
+  const labels = ['Chapter I', 'Chapter II', 'Chapter III'];
+  const recap = sessionData.choicesMade.map((c, i) =>
+    `<div class="choice-recap"><strong>${labels[i]}:</strong> ${c.choice}</div>`).join('');
+  document.getElementById('choiceRecap').innerHTML = recap;
+
+  // Stats
+  const elapsed = ((Date.now() - sessionData.start) / 1000).toFixed(0);
+  const mins = Math.floor(elapsed / 60);
+  const secs = elapsed % 60;
+  const stats = [
+    { label: 'Character', value: `${p.name}` },
+    { label: 'Class', value: p.class },
+    { label: 'Choices Made', value: sessionData.choicesMade.length },
+    { label: 'Session Duration', value: `${mins}m ${secs}s` },
+    { label: 'Events Logged', value: window.telemetryLog.length },
+    { label: 'Pages Visited', value: Object.keys(sessionData.pageTimers).length }
+  ];
+  document.getElementById('statsGrid').innerHTML = stats.map(s =>
+    `<div class="stat-card"><div class="stat-value">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('');
+
+  logEvent('session_end', 'ending', { duration_seconds: parseFloat(elapsed), total_events: window.telemetryLog.length });
+  showScene('ending');
+}
+
+// --- Export ---
+function exportLogs() {
+  const pid = prompt('Enter your Participant ID:');
+  if (!pid) return;
+  const data = { participantId: pid, exportedAt: new Date().toISOString(),
+    player: sessionData.player, events: window.telemetryLog };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `gemini-quest-${pid}-${Date.now()}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  logEvent('button_click', 'global', { button: 'export_logs', participantId: pid });
+}
+
+// --- Restart ---
+function restartGame() {
+  window.telemetryLog = [];
+  sessionData.start = Date.now();
+  sessionData.pageTimers = {};
+  sessionData.choicesMade = [];
+  sessionData.player = {};
+  selectedClass = '';
+  document.getElementById('playerName').value = '';
+  document.querySelectorAll('.class-card').forEach(c => c.classList.remove('selected'));
+  logEvent('session_start', 'global', { restart: true });
+  showScene('title-screen');
+}
+
+// --- Particles ---
+(function initParticles() {
+  const container = document.getElementById('title-particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = Math.random() * 100 + '%';
+    p.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+    p.style.setProperty('--dy', (Math.random() * -120 - 30) + 'px');
+    p.style.animationDelay = (Math.random() * 6) + 's';
+    p.style.animationDuration = (4 + Math.random() * 4) + 's';
+    if (Math.random() > 0.5) p.style.background = '#a78bfa';
+    container.appendChild(p);
+  }
+})();
+</script>
+</body>
+</html>

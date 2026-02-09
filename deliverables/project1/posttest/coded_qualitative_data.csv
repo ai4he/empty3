@@ -1,0 +1,241 @@
+participant_id,response_type,original_text,code,theme,coder
+P001,positive,The narrative branching felt genuinely responsive to my choices. I was impressed by how the story adapted when I made unexpected decisions.,visual_quality,Content Quality,LLM_coder_1
+P001,positive,The narrative branching felt genuinely responsive to my choices. I was impressed by how the story adapted when I made unexpected decisions.,visual_quality,Content Quality,LLM_coder_2
+P001,negative,"Some dialogue transitions felt abrupt, especially when switching between characters. The conversation flow could use more smoothing.",ai_inconsistency,AI Perception,LLM_coder_1
+P001,negative,"Some dialogue transitions felt abrupt, especially when switching between characters. The conversation flow could use more smoothing.",ai_inconsistency,AI Perception,LLM_coder_2
+P001,suggestion,Add a journal or codex feature that tracks story decisions and lore entries for reference.,replayability,Engagement,LLM_coder_2
+P001,suggestion,Add a journal or codex feature that tracks story decisions and lore entries for reference.,replayability,Engagement,LLM_coder_1
+P002,positive,Beautiful art style that maintained consistency throughout. The AI-generated environments had a cohesive aesthetic that really drew me in.,music_atmosphere,Content Quality,LLM_coder_1
+P002,positive,Beautiful art style that maintained consistency throughout. The AI-generated environments had a cohesive aesthetic that really drew me in.,music_atmosphere,Content Quality,LLM_coder_2
+P002,negative,I noticed occasional repetition in descriptive text. Certain phrases appeared multiple times across different scenes.,ai_inconsistency,AI Perception,LLM_coder_2
+P002,negative,I noticed occasional repetition in descriptive text. Certain phrases appeared multiple times across different scenes.,ai_inconsistency,AI Perception,LLM_coder_1
+P002,suggestion,Consider adding voice acting or text-to-speech for key dialogue moments.,replayability,Engagement,LLM_coder_2
+P002,suggestion,Consider adding voice acting or text-to-speech for key dialogue moments.,replayability,Engagement,LLM_coder_1
+P003,positive,Character dialogue felt surprisingly natural and engaging. I found myself genuinely caring about the outcomes of conversations.,replayability,Engagement,LLM_coder_2
+P003,positive,Character dialogue felt surprisingly natural and engaging. I found myself genuinely caring about the outcomes of conversations.,character_development,Content Quality,LLM_coder_1
+P003,negative,The AI-generated art had minor inconsistencies in character appearances between scenes. Maintaining visual continuity needs work.,pacing_issues,User Experience,LLM_coder_1
+P003,negative,The AI-generated art had minor inconsistencies in character appearances between scenes. Maintaining visual continuity needs work.,ai_inconsistency,AI Perception,LLM_coder_2
+P003,suggestion,A chapter select for replaying with different choices would increase replay value significantly.,ui_navigation,User Experience,LLM_coder_2
+P003,suggestion,A chapter select for replaying with different choices would increase replay value significantly.,ui_navigation,User Experience,LLM_coder_1
+P004,positive,The music adaptation was a standout feature. How it shifted with story beats created an incredibly atmospheric experience.,music_atmosphere,Content Quality,LLM_coder_1
+P004,positive,The music adaptation was a standout feature. How it shifted with story beats created an incredibly atmospheric experience.,music_atmosphere,Content Quality,LLM_coder_2
+P004,negative,Loading times between chapters were noticeable and broke immersion at critical story moments.,pacing_issues,User Experience,LLM_coder_1
+P004,negative,Loading times between chapters were noticeable and broke immersion at critical story moments.,pacing_issues,User Experience,LLM_coder_2
+P004,suggestion,Include more visual customization options for the main character during creation.,replayability,Engagement,LLM_coder_2
+P004,suggestion,Include more visual customization options for the main character during creation.,replayability,Engagement,LLM_coder_1
+P005,positive,I loved the character creation system. Being able to influence the AI narrative through my character background was a clever design choice.,immersive_narrative,Content Quality,LLM_coder_2
+P005,positive,I loved the character creation system. Being able to influence the AI narrative through my character background was a clever design choice.,immersive_narrative,Content Quality,LLM_coder_1
+P005,negative,Some narrative branches felt underdeveloped compared to others. The quality was uneven across different choice paths.,visual_quality,Content Quality,LLM_coder_1
+P005,negative,Some narrative branches felt underdeveloped compared to others. The quality was uneven across different choice paths.,visual_quality,Content Quality,LLM_coder_2
+P005,suggestion,Add difficulty settings that affect puzzle complexity and narrative branching depth.,replayability,Engagement,LLM_coder_1
+P005,suggestion,Add difficulty settings that affect puzzle complexity and narrative branching depth.,replayability,Engagement,LLM_coder_2
+P006,positive,The pacing of the story kept me engaged throughout. Each chapter built on the last in a way that felt intentional and well-structured.,character_development,Content Quality,LLM_coder_1
+P006,positive,The pacing of the story kept me engaged throughout. Each chapter built on the last in a way that felt intentional and well-structured.,character_development,Content Quality,LLM_coder_2
+P006,negative,The text-heavy sections could benefit from more visual breaks. Long passages without interaction tested my attention span.,pacing_issues,User Experience,LLM_coder_2
+P006,negative,The text-heavy sections could benefit from more visual breaks. Long passages without interaction tested my attention span.,pacing_issues,User Experience,LLM_coder_1
+P006,suggestion,Consider implementing a relationship tracker showing how NPCs feel about the player.,character_development,Content Quality,LLM_coder_2
+P006,suggestion,Consider implementing a relationship tracker showing how NPCs feel about the player.,character_development,Content Quality,LLM_coder_1
+P007,positive,World-building was rich and detailed. The lore entries generated for each area added depth without being overwhelming.,replayability,Engagement,LLM_coder_1
+P007,positive,World-building was rich and detailed. The lore entries generated for each area added depth without being overwhelming.,replayability,Engagement,LLM_coder_2
+P007,negative,Character motivations sometimes felt unclear or contradictory. The AI occasionally lost track of established personality traits.,pacing_issues,User Experience,LLM_coder_1
+P007,negative,Character motivations sometimes felt unclear or contradictory. The AI occasionally lost track of established personality traits.,pacing_issues,User Experience,LLM_coder_2
+P007,suggestion,A save system with multiple slots would let players explore different narrative branches.,creative_choices,Engagement,LLM_coder_1
+P007,suggestion,A save system with multiple slots would let players explore different narrative branches.,creative_choices,Engagement,LLM_coder_2
+P008,positive,The choice system felt meaningful. I could see how my decisions rippled through the narrative in ways both subtle and dramatic.,visual_quality,Content Quality,LLM_coder_2
+P008,positive,The choice system felt meaningful. I could see how my decisions rippled through the narrative in ways both subtle and dramatic.,visual_quality,Content Quality,LLM_coder_1
+P008,negative,The final chapter felt rushed compared to the deliberate pacing of earlier sections. More time for resolution would help.,technical_glitch,Technical Performance,LLM_coder_1
+P008,negative,The final chapter felt rushed compared to the deliberate pacing of earlier sections. More time for resolution would help.,technical_glitch,Technical Performance,LLM_coder_2
+P008,suggestion,Add optional side stories that expand on secondary characters and world lore.,technical_glitch,Technical Performance,LLM_coder_1
+P008,suggestion,Add optional side stories that expand on secondary characters and world lore.,technical_glitch,Technical Performance,LLM_coder_2
+P009,positive,Really enjoyed the visual storytelling elements. The scene transitions and art composition added emotional weight to key moments.,replayability,Engagement,LLM_coder_2
+P009,positive,Really enjoyed the visual storytelling elements. The scene transitions and art composition added emotional weight to key moments.,replayability,Engagement,LLM_coder_1
+P009,negative,I encountered a visual glitch where background art overlapped dialogue boxes during one scene in chapter two.,ai_inconsistency,AI Perception,LLM_coder_2
+P009,negative,I encountered a visual glitch where background art overlapped dialogue boxes during one scene in chapter two.,ai_inconsistency,AI Perception,LLM_coder_1
+P009,suggestion,Include a gallery mode to revisit AI-generated art from completed scenes.,replayability,Engagement,LLM_coder_1
+P009,suggestion,Include a gallery mode to revisit AI-generated art from completed scenes.,character_development,Content Quality,LLM_coder_2
+P010,positive,"The game managed to create genuine tension during key story beats. I was genuinely uncertain about outcomes, which is rare in narrative games.",music_atmosphere,Content Quality,LLM_coder_2
+P010,positive,"The game managed to create genuine tension during key story beats. I was genuinely uncertain about outcomes, which is rare in narrative games.",music_atmosphere,Content Quality,LLM_coder_1
+P010,negative,"The ambient music occasionally looped noticeably, which slightly diminished the otherwise strong atmosphere.",pacing_issues,User Experience,LLM_coder_1
+P010,negative,"The ambient music occasionally looped noticeably, which slightly diminished the otherwise strong atmosphere.",pacing_issues,User Experience,LLM_coder_2
+P010,suggestion,Consider adding collaborative or shared narrative modes for multiplayer experiences.,technical_glitch,Technical Performance,LLM_coder_2
+P010,suggestion,Consider adding collaborative or shared narrative modes for multiplayer experiences.,technical_glitch,Technical Performance,LLM_coder_1
+P011,positive,Impressive how the narrative maintained thematic consistency despite being AI-generated. The central themes carried through every chapter.,visual_quality,Content Quality,LLM_coder_1
+P011,positive,Impressive how the narrative maintained thematic consistency despite being AI-generated. The central themes carried through every chapter.,visual_quality,Content Quality,LLM_coder_2
+P011,negative,Some choice options felt too similar to each other. I wanted more dramatically different paths to explore.,ui_navigation,User Experience,LLM_coder_1
+P011,negative,Some choice options felt too similar to each other. I wanted more dramatically different paths to explore.,ui_navigation,User Experience,LLM_coder_2
+P011,suggestion,Implement a feedback button during gameplay so players can flag AI inconsistencies in real time.,creative_choices,Engagement,LLM_coder_2
+P011,suggestion,Implement a feedback button during gameplay so players can flag AI inconsistencies in real time.,creative_choices,Engagement,LLM_coder_1
+P012,positive,The puzzle elements integrated naturally into the narrative rather than feeling like arbitrary obstacles. Smart design choice.,character_development,Content Quality,LLM_coder_1
+P012,positive,The puzzle elements integrated naturally into the narrative rather than feeling like arbitrary obstacles. Smart design choice.,character_development,Content Quality,LLM_coder_2
+P012,negative,The settings menu was hard to find during gameplay. An in-game overlay would be more accessible than the current approach.,visual_quality,Content Quality,LLM_coder_1
+P012,negative,The settings menu was hard to find during gameplay. An in-game overlay would be more accessible than the current approach.,visual_quality,Content Quality,LLM_coder_2
+P012,suggestion,Add a narrative recap at the start of each chapter summarizing previous events and choices.,technical_glitch,Technical Performance,LLM_coder_1
+P012,suggestion,Add a narrative recap at the start of each chapter summarizing previous events and choices.,technical_glitch,Technical Performance,LLM_coder_2
+P013,positive,I appreciated the accessibility options available. The customizable text size and color settings made the experience comfortable.,replayability,Engagement,LLM_coder_1
+P013,positive,I appreciated the accessibility options available. The customizable text size and color settings made the experience comfortable.,replayability,Engagement,LLM_coder_2
+P013,negative,Certain AI-generated descriptions were overly verbose. Tighter editing would improve readability and pacing.,pacing_issues,User Experience,LLM_coder_1
+P013,negative,Certain AI-generated descriptions were overly verbose. Tighter editing would improve readability and pacing.,pacing_issues,User Experience,LLM_coder_2
+P013,suggestion,Consider accessibility features like dyslexia-friendly font options and high contrast modes.,character_development,Content Quality,LLM_coder_2
+P013,suggestion,Consider accessibility features like dyslexia-friendly font options and high contrast modes.,character_development,Content Quality,LLM_coder_1
+P014,positive,The ending felt earned and emotionally satisfying. It tied together threads from earlier choices in a way I did not expect.,replayability,Engagement,LLM_coder_1
+P014,positive,The ending felt earned and emotionally satisfying. It tied together threads from earlier choices in a way I did not expect.,replayability,Engagement,LLM_coder_2
+P014,negative,The difficulty curve for puzzle elements was inconsistent. Some were trivially easy while others halted progress.,technical_glitch,Technical Performance,LLM_coder_2
+P014,negative,The difficulty curve for puzzle elements was inconsistent. Some were trivially easy while others halted progress.,technical_glitch,Technical Performance,LLM_coder_1
+P014,suggestion,A mood or tone selector at the start could help the AI tailor the narrative atmosphere.,creative_choices,Engagement,LLM_coder_2
+P014,suggestion,A mood or tone selector at the start could help the AI tailor the narrative atmosphere.,creative_choices,Engagement,LLM_coder_1
+P015,positive,Sound design complemented the visuals perfectly. The ambient soundscapes made each location feel alive and unique.,music_atmosphere,Content Quality,LLM_coder_1
+P015,positive,Sound design complemented the visuals perfectly. The ambient soundscapes made each location feel alive and unique.,music_atmosphere,Content Quality,LLM_coder_2
+P015,negative,I felt the character creation options could be expanded. More background choices would add to the personalization.,ai_inconsistency,AI Perception,LLM_coder_1
+P015,negative,I felt the character creation options could be expanded. More background choices would add to the personalization.,ai_inconsistency,AI Perception,LLM_coder_2
+P015,suggestion,Include statistics at the end showing how your choices compared with other players.,replayability,Engagement,LLM_coder_2
+P015,suggestion,Include statistics at the end showing how your choices compared with other players.,replayability,Engagement,LLM_coder_1
+P016,positive,The UI was clean and intuitive. Never once did I feel lost or confused about how to interact with the game.,immersive_narrative,Content Quality,LLM_coder_1
+P016,positive,The UI was clean and intuitive. Never once did I feel lost or confused about how to interact with the game.,immersive_narrative,Content Quality,LLM_coder_2
+P016,negative,Text rendering on some art backgrounds made readability challenging. Better contrast or text boxes would help.,visual_quality,Content Quality,LLM_coder_2
+P016,negative,Text rendering on some art backgrounds made readability challenging. Better contrast or text boxes would help.,visual_quality,Content Quality,LLM_coder_1
+P016,suggestion,Add ambient environmental sounds that respond to narrative tension level.,creative_choices,Engagement,LLM_coder_1
+P016,suggestion,Add ambient environmental sounds that respond to narrative tension level.,creative_choices,Engagement,LLM_coder_2
+P017,positive,Dialogue options gave me real agency. I felt like I was shaping the character rather than just selecting from predetermined paths.,creative_choices,Engagement,LLM_coder_1
+P017,positive,Dialogue options gave me real agency. I felt like I was shaping the character rather than just selecting from predetermined paths.,creative_choices,Engagement,LLM_coder_2
+P017,negative,The help system was not very helpful for understanding game mechanics. More contextual tutorials would be welcome.,ui_navigation,User Experience,LLM_coder_1
+P017,negative,The help system was not very helpful for understanding game mechanics. More contextual tutorials would be welcome.,ui_navigation,User Experience,LLM_coder_2
+P017,suggestion,Consider a photo mode for capturing and sharing favorite AI-generated scene compositions.,ui_navigation,User Experience,LLM_coder_1
+P017,suggestion,Consider a photo mode for capturing and sharing favorite AI-generated scene compositions.,ui_navigation,User Experience,LLM_coder_2
+P018,positive,The game respected my time. Session length felt right and there were natural stopping points that made it easy to pause and return.,music_atmosphere,Content Quality,LLM_coder_1
+P018,positive,The game respected my time. Session length felt right and there were natural stopping points that made it easy to pause and return.,visual_quality,Content Quality,LLM_coder_2
+P018,negative,Some emotional scenes lacked impact because the AI writing was too clinical and detached in tone.,pacing_issues,User Experience,LLM_coder_2
+P018,negative,Some emotional scenes lacked impact because the AI writing was too clinical and detached in tone.,pacing_issues,User Experience,LLM_coder_1
+P018,suggestion,Implement an undo option for the most recent choice to reduce frustration.,creative_choices,Engagement,LLM_coder_1
+P018,suggestion,Implement an undo option for the most recent choice to reduce frustration.,creative_choices,Engagement,LLM_coder_2
+P019,positive,I was surprised by the emotional depth of some scenes. The AI managed to create moments that genuinely moved me.,visual_quality,Content Quality,LLM_coder_2
+P019,positive,I was surprised by the emotional depth of some scenes. The AI managed to create moments that genuinely moved me.,creative_choices,Engagement,LLM_coder_1
+P019,negative,Navigation between previously visited areas was cumbersome. A quick-travel or chapter select would improve the experience.,technical_glitch,Technical Performance,LLM_coder_1
+P019,negative,Navigation between previously visited areas was cumbersome. A quick-travel or chapter select would improve the experience.,technical_glitch,Technical Performance,LLM_coder_2
+P019,suggestion,Add more transitional animations between scenes to improve narrative flow.,technical_glitch,Technical Performance,LLM_coder_1
+P019,suggestion,Add more transitional animations between scenes to improve narrative flow.,technical_glitch,Technical Performance,LLM_coder_2
+P020,positive,The variety of narrative paths available adds significant replay value. I immediately wanted to play again making different choices.,immersive_narrative,Content Quality,LLM_coder_2
+P020,positive,The variety of narrative paths available adds significant replay value. I immediately wanted to play again making different choices.,immersive_narrative,Content Quality,LLM_coder_1
+P020,negative,"The game did not clearly indicate when choices were irreversible, which led to some frustrating moments.",pacing_issues,User Experience,LLM_coder_2
+P020,negative,"The game did not clearly indicate when choices were irreversible, which led to some frustrating moments.",pacing_issues,User Experience,LLM_coder_1
+P020,suggestion,Consider episodic content updates that expand the story world over time.,creative_choices,Engagement,LLM_coder_1
+P020,suggestion,Consider episodic content updates that expand the story world over time.,creative_choices,Engagement,LLM_coder_2
+P021,positive,The narrative branching felt genuinely responsive to my choices. I was impressed by how the story adapted when I made unexpected decisions.,replayability,Engagement,LLM_coder_1
+P021,positive,The narrative branching felt genuinely responsive to my choices. I was impressed by how the story adapted when I made unexpected decisions.,replayability,Engagement,LLM_coder_2
+P021,negative,"Some dialogue transitions felt abrupt, especially when switching between characters. The conversation flow could use more smoothing.",visual_quality,Content Quality,LLM_coder_1
+P021,negative,"Some dialogue transitions felt abrupt, especially when switching between characters. The conversation flow could use more smoothing.",visual_quality,Content Quality,LLM_coder_2
+P021,suggestion,Add a journal or codex feature that tracks story decisions and lore entries for reference.,technical_glitch,Technical Performance,LLM_coder_2
+P021,suggestion,Add a journal or codex feature that tracks story decisions and lore entries for reference.,ui_navigation,User Experience,LLM_coder_1
+P022,positive,Beautiful art style that maintained consistency throughout. The AI-generated environments had a cohesive aesthetic that really drew me in.,character_development,Content Quality,LLM_coder_2
+P022,positive,Beautiful art style that maintained consistency throughout. The AI-generated environments had a cohesive aesthetic that really drew me in.,character_development,Content Quality,LLM_coder_1
+P022,negative,I noticed occasional repetition in descriptive text. Certain phrases appeared multiple times across different scenes.,technical_glitch,Technical Performance,LLM_coder_1
+P022,negative,I noticed occasional repetition in descriptive text. Certain phrases appeared multiple times across different scenes.,technical_glitch,Technical Performance,LLM_coder_2
+P022,suggestion,Consider adding voice acting or text-to-speech for key dialogue moments.,ui_navigation,User Experience,LLM_coder_1
+P022,suggestion,Consider adding voice acting or text-to-speech for key dialogue moments.,ui_navigation,User Experience,LLM_coder_2
+P023,positive,Character dialogue felt surprisingly natural and engaging. I found myself genuinely caring about the outcomes of conversations.,character_development,Content Quality,LLM_coder_1
+P023,positive,Character dialogue felt surprisingly natural and engaging. I found myself genuinely caring about the outcomes of conversations.,replayability,Engagement,LLM_coder_2
+P023,negative,The AI-generated art had minor inconsistencies in character appearances between scenes. Maintaining visual continuity needs work.,pacing_issues,User Experience,LLM_coder_1
+P023,negative,The AI-generated art had minor inconsistencies in character appearances between scenes. Maintaining visual continuity needs work.,pacing_issues,User Experience,LLM_coder_2
+P023,suggestion,A chapter select for replaying with different choices would increase replay value significantly.,replayability,Engagement,LLM_coder_1
+P023,suggestion,A chapter select for replaying with different choices would increase replay value significantly.,ui_navigation,User Experience,LLM_coder_2
+P024,positive,The music adaptation was a standout feature. How it shifted with story beats created an incredibly atmospheric experience.,music_atmosphere,Content Quality,LLM_coder_2
+P024,positive,The music adaptation was a standout feature. How it shifted with story beats created an incredibly atmospheric experience.,music_atmosphere,Content Quality,LLM_coder_1
+P024,negative,Loading times between chapters were noticeable and broke immersion at critical story moments.,ai_inconsistency,AI Perception,LLM_coder_2
+P024,negative,Loading times between chapters were noticeable and broke immersion at critical story moments.,ai_inconsistency,AI Perception,LLM_coder_1
+P024,suggestion,Include more visual customization options for the main character during creation.,replayability,Engagement,LLM_coder_1
+P024,suggestion,Include more visual customization options for the main character during creation.,replayability,Engagement,LLM_coder_2
+P025,positive,I loved the character creation system. Being able to influence the AI narrative through my character background was a clever design choice.,music_atmosphere,Content Quality,LLM_coder_1
+P025,positive,I loved the character creation system. Being able to influence the AI narrative through my character background was a clever design choice.,music_atmosphere,Content Quality,LLM_coder_2
+P025,negative,Some narrative branches felt underdeveloped compared to others. The quality was uneven across different choice paths.,technical_glitch,Technical Performance,LLM_coder_1
+P025,negative,Some narrative branches felt underdeveloped compared to others. The quality was uneven across different choice paths.,technical_glitch,Technical Performance,LLM_coder_2
+P025,suggestion,Add difficulty settings that affect puzzle complexity and narrative branching depth.,replayability,Engagement,LLM_coder_1
+P025,suggestion,Add difficulty settings that affect puzzle complexity and narrative branching depth.,replayability,Engagement,LLM_coder_2
+P026,positive,The pacing of the story kept me engaged throughout. Each chapter built on the last in a way that felt intentional and well-structured.,creative_choices,Engagement,LLM_coder_1
+P026,positive,The pacing of the story kept me engaged throughout. Each chapter built on the last in a way that felt intentional and well-structured.,creative_choices,Engagement,LLM_coder_2
+P026,negative,The text-heavy sections could benefit from more visual breaks. Long passages without interaction tested my attention span.,visual_quality,Content Quality,LLM_coder_1
+P026,negative,The text-heavy sections could benefit from more visual breaks. Long passages without interaction tested my attention span.,ui_navigation,User Experience,LLM_coder_2
+P026,suggestion,Consider implementing a relationship tracker showing how NPCs feel about the player.,ui_navigation,User Experience,LLM_coder_2
+P026,suggestion,Consider implementing a relationship tracker showing how NPCs feel about the player.,ui_navigation,User Experience,LLM_coder_1
+P027,positive,World-building was rich and detailed. The lore entries generated for each area added depth without being overwhelming.,creative_choices,Engagement,LLM_coder_2
+P027,positive,World-building was rich and detailed. The lore entries generated for each area added depth without being overwhelming.,creative_choices,Engagement,LLM_coder_1
+P027,negative,Character motivations sometimes felt unclear or contradictory. The AI occasionally lost track of established personality traits.,ai_inconsistency,AI Perception,LLM_coder_1
+P027,negative,Character motivations sometimes felt unclear or contradictory. The AI occasionally lost track of established personality traits.,ai_inconsistency,AI Perception,LLM_coder_2
+P027,suggestion,A save system with multiple slots would let players explore different narrative branches.,creative_choices,Engagement,LLM_coder_1
+P027,suggestion,A save system with multiple slots would let players explore different narrative branches.,creative_choices,Engagement,LLM_coder_2
+P028,positive,The choice system felt meaningful. I could see how my decisions rippled through the narrative in ways both subtle and dramatic.,creative_choices,Engagement,LLM_coder_1
+P028,positive,The choice system felt meaningful. I could see how my decisions rippled through the narrative in ways both subtle and dramatic.,creative_choices,Engagement,LLM_coder_2
+P028,negative,The final chapter felt rushed compared to the deliberate pacing of earlier sections. More time for resolution would help.,ai_inconsistency,AI Perception,LLM_coder_2
+P028,negative,The final chapter felt rushed compared to the deliberate pacing of earlier sections. More time for resolution would help.,ai_inconsistency,AI Perception,LLM_coder_1
+P028,suggestion,Add optional side stories that expand on secondary characters and world lore.,replayability,Engagement,LLM_coder_2
+P028,suggestion,Add optional side stories that expand on secondary characters and world lore.,ui_navigation,User Experience,LLM_coder_1
+P029,positive,Really enjoyed the visual storytelling elements. The scene transitions and art composition added emotional weight to key moments.,music_atmosphere,Content Quality,LLM_coder_2
+P029,positive,Really enjoyed the visual storytelling elements. The scene transitions and art composition added emotional weight to key moments.,music_atmosphere,Content Quality,LLM_coder_1
+P029,negative,I encountered a visual glitch where background art overlapped dialogue boxes during one scene in chapter two.,ai_inconsistency,AI Perception,LLM_coder_2
+P029,negative,I encountered a visual glitch where background art overlapped dialogue boxes during one scene in chapter two.,ai_inconsistency,AI Perception,LLM_coder_1
+P029,suggestion,Include a gallery mode to revisit AI-generated art from completed scenes.,technical_glitch,Technical Performance,LLM_coder_1
+P029,suggestion,Include a gallery mode to revisit AI-generated art from completed scenes.,technical_glitch,Technical Performance,LLM_coder_2
+P030,positive,"The game managed to create genuine tension during key story beats. I was genuinely uncertain about outcomes, which is rare in narrative games.",visual_quality,Content Quality,LLM_coder_1
+P030,positive,"The game managed to create genuine tension during key story beats. I was genuinely uncertain about outcomes, which is rare in narrative games.",creative_choices,Engagement,LLM_coder_2
+P030,negative,"The ambient music occasionally looped noticeably, which slightly diminished the otherwise strong atmosphere.",visual_quality,Content Quality,LLM_coder_1
+P030,negative,"The ambient music occasionally looped noticeably, which slightly diminished the otherwise strong atmosphere.",visual_quality,Content Quality,LLM_coder_2
+P030,suggestion,Consider adding collaborative or shared narrative modes for multiplayer experiences.,technical_glitch,Technical Performance,LLM_coder_1
+P030,suggestion,Consider adding collaborative or shared narrative modes for multiplayer experiences.,technical_glitch,Technical Performance,LLM_coder_2
+P031,positive,Impressive how the narrative maintained thematic consistency despite being AI-generated. The central themes carried through every chapter.,visual_quality,Content Quality,LLM_coder_2
+P031,positive,Impressive how the narrative maintained thematic consistency despite being AI-generated. The central themes carried through every chapter.,visual_quality,Content Quality,LLM_coder_1
+P031,negative,Some choice options felt too similar to each other. I wanted more dramatically different paths to explore.,technical_glitch,Technical Performance,LLM_coder_2
+P031,negative,Some choice options felt too similar to each other. I wanted more dramatically different paths to explore.,technical_glitch,Technical Performance,LLM_coder_1
+P031,suggestion,Implement a feedback button during gameplay so players can flag AI inconsistencies in real time.,replayability,Engagement,LLM_coder_2
+P031,suggestion,Implement a feedback button during gameplay so players can flag AI inconsistencies in real time.,replayability,Engagement,LLM_coder_1
+P032,positive,The puzzle elements integrated naturally into the narrative rather than feeling like arbitrary obstacles. Smart design choice.,music_atmosphere,Content Quality,LLM_coder_1
+P032,positive,The puzzle elements integrated naturally into the narrative rather than feeling like arbitrary obstacles. Smart design choice.,music_atmosphere,Content Quality,LLM_coder_2
+P032,negative,The settings menu was hard to find during gameplay. An in-game overlay would be more accessible than the current approach.,visual_quality,Content Quality,LLM_coder_2
+P032,negative,The settings menu was hard to find during gameplay. An in-game overlay would be more accessible than the current approach.,visual_quality,Content Quality,LLM_coder_1
+P032,suggestion,Add a narrative recap at the start of each chapter summarizing previous events and choices.,creative_choices,Engagement,LLM_coder_1
+P032,suggestion,Add a narrative recap at the start of each chapter summarizing previous events and choices.,creative_choices,Engagement,LLM_coder_2
+P033,positive,I appreciated the accessibility options available. The customizable text size and color settings made the experience comfortable.,music_atmosphere,Content Quality,LLM_coder_1
+P033,positive,I appreciated the accessibility options available. The customizable text size and color settings made the experience comfortable.,music_atmosphere,Content Quality,LLM_coder_2
+P033,negative,Certain AI-generated descriptions were overly verbose. Tighter editing would improve readability and pacing.,pacing_issues,User Experience,LLM_coder_2
+P033,negative,Certain AI-generated descriptions were overly verbose. Tighter editing would improve readability and pacing.,ai_inconsistency,AI Perception,LLM_coder_1
+P033,suggestion,Consider accessibility features like dyslexia-friendly font options and high contrast modes.,replayability,Engagement,LLM_coder_1
+P033,suggestion,Consider accessibility features like dyslexia-friendly font options and high contrast modes.,replayability,Engagement,LLM_coder_2
+P034,positive,The ending felt earned and emotionally satisfying. It tied together threads from earlier choices in a way I did not expect.,replayability,Engagement,LLM_coder_1
+P034,positive,The ending felt earned and emotionally satisfying. It tied together threads from earlier choices in a way I did not expect.,replayability,Engagement,LLM_coder_2
+P034,negative,The difficulty curve for puzzle elements was inconsistent. Some were trivially easy while others halted progress.,pacing_issues,User Experience,LLM_coder_1
+P034,negative,The difficulty curve for puzzle elements was inconsistent. Some were trivially easy while others halted progress.,pacing_issues,User Experience,LLM_coder_2
+P034,suggestion,A mood or tone selector at the start could help the AI tailor the narrative atmosphere.,technical_glitch,Technical Performance,LLM_coder_1
+P034,suggestion,A mood or tone selector at the start could help the AI tailor the narrative atmosphere.,technical_glitch,Technical Performance,LLM_coder_2
+P035,positive,Sound design complemented the visuals perfectly. The ambient soundscapes made each location feel alive and unique.,music_atmosphere,Content Quality,LLM_coder_2
+P035,positive,Sound design complemented the visuals perfectly. The ambient soundscapes made each location feel alive and unique.,music_atmosphere,Content Quality,LLM_coder_1
+P035,negative,I felt the character creation options could be expanded. More background choices would add to the personalization.,ai_inconsistency,AI Perception,LLM_coder_2
+P035,negative,I felt the character creation options could be expanded. More background choices would add to the personalization.,ai_inconsistency,AI Perception,LLM_coder_1
+P035,suggestion,Include statistics at the end showing how your choices compared with other players.,replayability,Engagement,LLM_coder_1
+P035,suggestion,Include statistics at the end showing how your choices compared with other players.,replayability,Engagement,LLM_coder_2
+P036,positive,The UI was clean and intuitive. Never once did I feel lost or confused about how to interact with the game.,character_development,Content Quality,LLM_coder_2
+P036,positive,The UI was clean and intuitive. Never once did I feel lost or confused about how to interact with the game.,character_development,Content Quality,LLM_coder_1
+P036,negative,Text rendering on some art backgrounds made readability challenging. Better contrast or text boxes would help.,technical_glitch,Technical Performance,LLM_coder_2
+P036,negative,Text rendering on some art backgrounds made readability challenging. Better contrast or text boxes would help.,technical_glitch,Technical Performance,LLM_coder_1
+P036,suggestion,Add ambient environmental sounds that respond to narrative tension level.,technical_glitch,Technical Performance,LLM_coder_2
+P036,suggestion,Add ambient environmental sounds that respond to narrative tension level.,technical_glitch,Technical Performance,LLM_coder_1
+P037,positive,Dialogue options gave me real agency. I felt like I was shaping the character rather than just selecting from predetermined paths.,character_development,Content Quality,LLM_coder_1
+P037,positive,Dialogue options gave me real agency. I felt like I was shaping the character rather than just selecting from predetermined paths.,creative_choices,Engagement,LLM_coder_2
+P037,negative,The help system was not very helpful for understanding game mechanics. More contextual tutorials would be welcome.,pacing_issues,User Experience,LLM_coder_2
+P037,negative,The help system was not very helpful for understanding game mechanics. More contextual tutorials would be welcome.,pacing_issues,User Experience,LLM_coder_1
+P037,suggestion,Consider a photo mode for capturing and sharing favorite AI-generated scene compositions.,creative_choices,Engagement,LLM_coder_2
+P037,suggestion,Consider a photo mode for capturing and sharing favorite AI-generated scene compositions.,creative_choices,Engagement,LLM_coder_1
+P038,positive,The game respected my time. Session length felt right and there were natural stopping points that made it easy to pause and return.,immersive_narrative,Content Quality,LLM_coder_1
+P038,positive,The game respected my time. Session length felt right and there were natural stopping points that made it easy to pause and return.,immersive_narrative,Content Quality,LLM_coder_2
+P038,negative,Some emotional scenes lacked impact because the AI writing was too clinical and detached in tone.,ui_navigation,User Experience,LLM_coder_1
+P038,negative,Some emotional scenes lacked impact because the AI writing was too clinical and detached in tone.,ui_navigation,User Experience,LLM_coder_2
+P038,suggestion,Implement an undo option for the most recent choice to reduce frustration.,ui_navigation,User Experience,LLM_coder_2
+P038,suggestion,Implement an undo option for the most recent choice to reduce frustration.,ui_navigation,User Experience,LLM_coder_1
+P039,positive,I was surprised by the emotional depth of some scenes. The AI managed to create moments that genuinely moved me.,visual_quality,Content Quality,LLM_coder_1
+P039,positive,I was surprised by the emotional depth of some scenes. The AI managed to create moments that genuinely moved me.,visual_quality,Content Quality,LLM_coder_2
+P039,negative,Navigation between previously visited areas was cumbersome. A quick-travel or chapter select would improve the experience.,ai_inconsistency,AI Perception,LLM_coder_1
+P039,negative,Navigation between previously visited areas was cumbersome. A quick-travel or chapter select would improve the experience.,technical_glitch,Technical Performance,LLM_coder_2
+P039,suggestion,Add more transitional animations between scenes to improve narrative flow.,character_development,Content Quality,LLM_coder_2
+P039,suggestion,Add more transitional animations between scenes to improve narrative flow.,character_development,Content Quality,LLM_coder_1
+P040,positive,The variety of narrative paths available adds significant replay value. I immediately wanted to play again making different choices.,visual_quality,Content Quality,LLM_coder_1
+P040,positive,The variety of narrative paths available adds significant replay value. I immediately wanted to play again making different choices.,visual_quality,Content Quality,LLM_coder_2
+P040,negative,"The game did not clearly indicate when choices were irreversible, which led to some frustrating moments.",technical_glitch,Technical Performance,LLM_coder_1
+P040,negative,"The game did not clearly indicate when choices were irreversible, which led to some frustrating moments.",technical_glitch,Technical Performance,LLM_coder_2
+P040,suggestion,Consider episodic content updates that expand the story world over time.,technical_glitch,Technical Performance,LLM_coder_1
+P040,suggestion,Consider episodic content updates that expand the story world over time.,technical_glitch,Technical Performance,LLM_coder_2
